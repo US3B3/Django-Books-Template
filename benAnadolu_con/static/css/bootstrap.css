@@ -4083,6 +4083,10 @@ input[type="button"].btn-block {
   margin-bottom: -1px;
 }
 
+.nav-item.active {
+  font-weight: bold;
+}
+
 .nav-tabs .nav-link {
   border: 1px solid transparent;
   border-top-left-radius: 0.25rem;
