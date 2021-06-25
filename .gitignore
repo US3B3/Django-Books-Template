@@ -168,5 +168,8 @@ Thumbs.db
 # Local History for Visual Studio Code
 .history/
 
+#Özel klasörler
+grafik/
+grafik/*
 
 # End of https://www.toptal.com/developers/gitignore/api/django
