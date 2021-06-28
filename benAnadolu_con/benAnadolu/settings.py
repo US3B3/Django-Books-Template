@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'sayfalar.apps.SayfalarConfig',
     'videolar.apps.VideolarConfig',
+    'ckeditor',
+    'django_rename_app',
 ]
 
 MIDDLEWARE = [
@@ -105,7 +107,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'tr'
 
 TIME_ZONE = 'UTC'
 
