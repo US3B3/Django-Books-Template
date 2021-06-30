@@ -74,6 +74,10 @@ body {
   min-height: auto;
 }
 
+.sub_page .makale-sayfa {
+  min-height: 33vh;
+}
+
 .sub_page .header_section {
   -webkit-box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15);
           box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15);
