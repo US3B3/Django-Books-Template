@@ -30,6 +30,101 @@
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+  <!-- fancbox -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+
+  <style>
+    /* First make sure the video thumbnail images are responsive. */
+
+  .video img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* 
+  This is the starting grid for each video with thumbnails 4 across for the largest screen size.
+  It's important to use percentages or there may be gaps on the right side of the page. 
+  */
+
+  .video {
+    background: rgb(252, 252, 252);
+    padding-bottom: 20px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+    width: 23%; /* Thumbnails 4 across */
+    margin: 1%;
+    float: left;
+    transition: all, 0.3s, ease;
+  }
+
+  .video h2 {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.25;
+    color: rgb(22, 22, 22);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 7px 4px;
+    margin: 0;
+    white-space: nowrap;
+  }
+   /* 
+   These keep the height of each video thumbnail consistent between YouTube and Vimeo.
+   Each can have thumbnail sizes that vary by 1px and are likely break your layout. 
+   */
+
+  .video figure {
+    height: 0;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+  }
+    .video figure a {
+      display: block;
+      margin: 0;
+      padding: 0;
+      border: none;
+      line-height: 0;
+    }
+  
+
+  /* Media Queries - This is the responsive grid. */
+
+  @media (max-width: 1024px) {
+    .video {
+      width: 31.333%; /* Thumbnails 3 across */
+    }
+  }
+
+  @media (max-width: 600px) {
+    .video {
+      width: 48%; /* Thumbnails 2 across */
+    }
+  }
+
+  @media (max-width: 360px) {
+    .video {
+      display: block;
+      width: 96%; /* Single column view. */
+      margin: 2%; /* The smaller the screen, the smaller the percentage actually is. */
+      float: none;
+    }
+  }
+
+  /* These are my preferred rollover styles. */
+
+  .video img {
+    width: 100%;
+    opacity: 1;
+  }
+
+  .video img:hover, .video img:active, .video img:focus {
+    opacity: 0.75;
+  }
+
+  .fancybox-overlay-fixed {
+    background-color: rgba(0,0,0,0.7);
+  }
+  </style>
 
 </head>
 
@@ -121,31 +216,71 @@
   <section class="about_section layout_padding ">
     <div class="container">
       <div class="row">
-        <div class="col-md-9 blog-main">
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,</p>
+        <div class="col-md-12">
+          <article class="video">
+            <figure>
+              <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/paG__3FBLzI">
+              <img class="videoThumb" src="https://i1.ytimg.com/vi/paG__3FBLzI/mqdefault.jpg"></a>
+            </figure>
+            <h2 class="videoTitle">Mesopotamia</h2>
+          </article>
+
+          <article class="video">
+            <figure>
+              <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/paG__3FBLzI">
+              <img class="videoThumb" src="https://i1.ytimg.com/vi/paG__3FBLzI/mqdefault.jpg"></a>
+            </figure>
+            <h2 class="videoTitle">Mesopotamia</h2>
+          </article>
+
+          <article class="video">
+            <figure>
+              <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/paG__3FBLzI">
+              <img class="videoThumb" src="https://i1.ytimg.com/vi/paG__3FBLzI/mqdefault.jpg"></a>
+            </figure>
+            <h2 class="videoTitle">Mesopotamia</h2>
+          </article>
+
+          <article class="video">
+            <figure>
+              <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/paG__3FBLzI">
+              <img class="videoThumb" src="https://i1.ytimg.com/vi/paG__3FBLzI/mqdefault.jpg"></a>
+            </figure>
+            <h2 class="videoTitle">Mesopotamia</h2>
+          </article>
+
+          <article class="video">
+            <figure>
+              <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/paG__3FBLzI">
+              <img class="videoThumb" src="https://i1.ytimg.com/vi/paG__3FBLzI/mqdefault.jpg"></a>
+            </figure>
+            <h2 class="videoTitle">Mesopotamia</h2>
+          </article>
+
+          <article class="video">
+            <figure>
+              <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/paG__3FBLzI">
+              <img class="videoThumb" src="https://i1.ytimg.com/vi/paG__3FBLzI/mqdefault.jpg"></a>
+            </figure>
+            <h2 class="videoTitle">Mesopotamia</h2>
+          </article>
+
+          <article class="video">
+            <figure>
+              <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/paG__3FBLzI">
+              <img class="videoThumb" src="https://i1.ytimg.com/vi/paG__3FBLzI/mqdefault.jpg"></a>
+            </figure>
+            <h2 class="videoTitle">Mesopotamia</h2>
+          </article>
+
+          <article class="video">
+            <figure>
+              <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/paG__3FBLzI">
+              <img class="videoThumb" src="https://i1.ytimg.com/vi/paG__3FBLzI/mqdefault.jpg"></a>
+            </figure>
+            <h2 class="videoTitle">Mesopotamia</h2>
+          </article>
         </div>
-        <aside class="col-md-3 blog-sidebar bg-light">
-          <div class="p-3">
-            <h4>Diğer Başlıklar</h4>
-            <ol class="list-unstyled mb-0">
-              <li>
-                <a href="#" class="text-info">Deneme1</a>
-              </li>
-              <li>
-                <a href="#" class="text-info">Deneme2</a>
-              </li>
-              <li>
-                <a href="#" class="text-info">Deneme3</a>
-              </li>
-              <li>
-                <a href="#" class="text-info">Deneme4</a>
-              </li>
-              <li>
-                <a href="#" class="text-info">Deneme5</a>
-              </li>
-            </ol>
-          </div>
-        </aside>
       </div>
     </div>
   </section>
@@ -241,7 +376,26 @@
   <script src="js/custom.js"></script>
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
-  <!-- End Google Map -->
+  <!-- fancybox -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+
+  <script src="js/jquery.fancybox.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $('.fancybox').fancybox({
+        padding   : 0,
+        maxWidth  : '100%',
+        maxHeight : '100%',
+        width   : 560,
+        height    : 315,
+        autoSize  : true,
+        closeClick  : true,
+        openEffect  : 'elastic',
+        closeEffect : 'elastic'
+      });
+    });
+  </script>
 
 </body>
 
