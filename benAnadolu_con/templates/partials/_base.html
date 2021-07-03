@@ -31,6 +31,9 @@
   <link href="{% static 'css/style.css' %}" rel="stylesheet" />
   <!-- responsive style -->
   <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+  <!-- fancybox -->
+  <link rel="stylesheet" href="{% static 'css/fancybox.css' %}" />
+
 
 </head>
 
@@ -43,8 +46,6 @@
 {% else %}
     <body class="sub_page">
 {% endif %}
-    
-  <div class="hero_area">
 
 <!-- Sayfa İçeriği -->
   {% block content %}
@@ -66,7 +67,24 @@
   <script src="{% static 'js/custom.js' %}"></script>
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
-  <!-- End Google Map -->
+  <!-- fancybox -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+  <script src="{% static 'js/jquery.fancybox.js' %}"></script>
+  <script>
+    $(document).ready(function() {
+      $('.fancybox').fancybox({
+        padding   : 0,
+        maxWidth  : '100%',
+        maxHeight : '100%',
+        width   : 560,
+        height    : 315,
+        autoSize  : true,
+        closeClick  : true,
+        openEffect  : 'elastic',
+        closeEffect : 'elastic'
+      });
+    });
+  </script>
 
 </body>
 
