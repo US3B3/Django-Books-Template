@@ -110,6 +110,24 @@ body {
   background-position: right;
 }
 
+.blogsayfa .about_section .col-md-6 h2 , .lead{
+  text-shadow: 0px 0px 9px rgb(0 0 0 / 70%);
+}
+
+.blogsayfa .about_section .mb-2 .card {
+  overflow: hidden;
+}
+
+.blogsayfa .teacher_section .img-box {
+  max-height: 25vh;
+  overflow: hidden;
+}
+
+/* Foto Galeri */
+
+.w3-quarter img{margin-bottom: -6px; cursor: pointer}
+.w3-quarter img:hover{opacity: 0.6; transition: 0.3s}
+#modal01 {padding-top: 21vh;} 
 /* Video Sayfası */ 
 
 .videosayfa .video img {
@@ -1379,4 +1397,31 @@ It's important to use percentages or there may be gaps on the right side of the 
     /*The size of the normal image, half the size of the hi-res image*/
   }
 }
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: rgb(27, 42, 110);
+  color: white;
+  cursor: pointer;
+  padding: 9px 15px;
+  border-radius: 4px;
+  opacity: 0.7;
+}
+
+#myBtn i{
+font-weight: bold;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
 /*# sourceMappingURL=style.css.map */
+
