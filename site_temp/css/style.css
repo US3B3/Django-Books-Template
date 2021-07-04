@@ -78,6 +78,130 @@ body {
   min-height: 33vh;
 }
 
+/* Blog Sayfası */
+
+.sub_page .blog {
+  min-height: 33vh;
+}
+
+.blogsayfa .about_section {
+  padding: 5vh 0 5vh 0;
+}
+
+.blogsayfa .about_section .row{
+  align-items: baseline;
+}
+
+.blogsayfa .img-box img {
+  height:35vh;
+  object-fit: cover;
+
+}
+
+.blogsayfa .onecikanmakale {
+  width: 200px; 
+  height: 250px;
+}
+
+.blogsayfa .about_section .anamakale {
+  background-image: url(../images/t2.jpg); 
+  overflow: hidden; 
+  background-repeat: no-repeat; 
+  background-position: right;
+}
+
+/* Video Sayfası */ 
+
+.videosayfa .video img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 
+This is the starting grid for each video with thumbnails 4 across for the largest screen size.
+It's important to use percentages or there may be gaps on the right side of the page. 
+*/
+
+.videosayfa .video {
+  background: rgb(252, 252, 252);
+  padding-bottom: 20px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+  width: 23%; /* Thumbnails 4 across */
+  margin: 1%;
+  float: left;
+  transition: all, 0.3s, ease;
+}
+
+.videosayfa .video h2 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: rgb(22, 22, 22);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 7px 4px;
+  margin: 0;
+  white-space: nowrap;
+}
+ /* 
+ These keep the height of each video thumbnail consistent between YouTube and Vimeo.
+ Each can have thumbnail sizes that vary by 1px and are likely break your layout. 
+ */
+
+ .videosayfa .video figure {
+  height: 0;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+}
+
+.videosayfa .video figure a {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  line-height: 0;
+}
+
+
+/* Media Queries - This is the responsive grid. */
+
+@media (max-width: 1024px) {
+  .videosayfa .video {
+    width: 31.333%; /* Thumbnails 3 across */
+  }
+}
+
+@media (max-width: 600px) {
+  .videosayfa .video {
+    width: 48%; /* Thumbnails 2 across */
+  }
+}
+
+@media (max-width: 360px) {
+  .videosayfa .video {
+    display: block;
+    width: 96%; /* Single column view. */
+    margin: 2%; /* The smaller the screen, the smaller the percentage actually is. */
+    float: none;
+  }
+}
+
+/* These are my preferred rollover styles. */
+
+.videosayfa .video img {
+  width: 100%;
+  opacity: 1;
+}
+
+.videosayfa .video img:hover, .video img:active, .video img:focus {
+  opacity: 0.75;
+}
+
+.videosayfa .fancybox-overlay-fixed {
+  background-color: rgba(0,0,0,0.7);
+}
+
 .sub_page .header_section {
   -webkit-box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15);
           box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.15);

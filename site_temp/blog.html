@@ -31,17 +31,11 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
-  <style>
-    .about_section .row{
-      align-items: baseline;
-    }
-  </style>
-
 </head>
 
-<body class="sub_page">
+<body class="sub_page blogsayfa">
 
-  <div class="hero_area makale-sayfa">
+  <div class="hero_area blog">
     <!-- header section strats -->
     <header class="header_section ">
       <div class="container-fluid">
@@ -123,17 +117,17 @@
 
   <!-- about section -->
 
-  <section class="about_section layout_padding ">
+  <section class="about_section">
     <div class="container">
-      <div class="row">
-        <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
-          <div class="col-md-6 px-0">
-            <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
+      <div class="row" >
+        <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark anamakale"> 
+          <div class="col-md-6 px-0" >
+            <h2 class="display-4">Title of a longer featured blog post</h2>
             <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
             <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
           </div>
         </div>
-  
+
         <div class="row mb-2">
           <div class="col-md-6">
             <div class="card flex-md-row mb-4 box-shadow h-md-250">
@@ -146,7 +140,7 @@
                 <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
                 <a href="#">Continue reading</a>
               </div>
-              <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap">
+              <img class="onecıkanmakale2" src="images/t1.jpg" alt="Card image cap" style="width: 200px; height: 250px;">
             </div>
           </div>
           <div class="col-md-6">
@@ -160,7 +154,7 @@
                 <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
                 <a href="#">Continue reading</a>
               </div>
-              <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap">
+              <img class="onecıkanmakale2" src="images/t1.jpg" alt="Card image cap" style="width: 200px; height: 250px;">
             </div>
           </div>
         </div>
@@ -169,7 +163,7 @@
       <main role="main" class="container">
         <div class="row">
           <div class="col-md-10 blog-main">
-            <h3 class="pb-3 mb-4 font-italic border-bottom">
+            <h3 class="pb-3 mb-4 border-bottom">
               From the Firehose
             </h3>
   
@@ -177,7 +171,7 @@
               <div class="container">
                 <div class="row">
                   <div class="col-sm-6 col-lg-6">
-                    <div class="box">
+                    <div class="box rounded">
                       <div class="img-box">
                         <img src="images/t1.jpg" alt="">
                       </div>
@@ -192,7 +186,7 @@
                     </div>
                   </div>
                   <div class="col-sm-6 col-lg-6">
-                    <div class="box">
+                    <div class="box rounded">
                       <div class="img-box">
                         <img src="images/t2.jpg" alt="">
                       </div>
@@ -207,7 +201,7 @@
                     </div>
                   </div>
                   <div class="col-sm-6 col-lg-6">
-                    <div class="box">
+                    <div class="box rounded">
                       <div class="img-box">
                         <img src="images/t3.jpg" alt="">
                       </div>
@@ -222,7 +216,7 @@
                     </div>
                   </div>
                   <div class="col-sm-6 col-lg-6">
-                    <div class="box">
+                    <div class="box rounded">
                       <div class="img-box">
                         <img src="images/t4.jpg" alt="">
                       </div>
@@ -244,7 +238,7 @@
   
           <aside class="col-md-2 blog-sidebar">
             <div class="p-3">
-              <h4 class="font-italic">Archives</h4>
+              <h4>Archives</h4>
               <ol class="list-unstyled mb-0">
                 <li><a href="#">March 2014</a></li>
                 <li><a href="#">February 2014</a></li>
@@ -362,6 +356,14 @@
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
   <!-- End Google Map -->
+  <script src="deneme/holder.js"></script>
+  <script>
+    Holder.addTheme('thumb', {
+      bg: '#55595c',
+      fg: '#eceeef',
+      text: 'Thumbnail'
+    });
+  </script>
 
 </body>
 
