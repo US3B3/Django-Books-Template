@@ -19,10 +19,8 @@
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
-
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet" />
-
   <!-- font awesome style -->
   <link href='{% static "css/font-awesome.min.css" %}' rel="stylesheet" />
   <!-- owl carousel -->
@@ -33,7 +31,8 @@
   <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
   <!-- fancybox -->
   <link rel="stylesheet" href="{% static 'css/fancybox.css' %}" />
-
+  <!-- w3 css -->
+  <link rel="stylesheet" href="{% static 'w3.css' %}">
 
 </head>
 
@@ -65,51 +64,13 @@
   <script src="{% static 'js/bootstrap.js' %}"></script>
   <!-- owl carousel -->
   <script src="{% static 'js/owl-carousel.js' %}"></script>
-  <!-- custom js -->
-  <script src="{% static 'js/custom.js' %}"></script>
-  <!-- Google Map -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
   <!-- fancybox -->
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
   <script src="{% static 'js/jquery.fancybox.js' %}"></script>
-  <script>
-    $(document).ready(function() {
-      $('.fancybox').fancybox({
-        padding   : 0,
-        maxWidth  : '100%',
-        maxHeight : '100%',
-        width   : 560,
-        height    : 315,
-        autoSize  : true,
-        closeClick  : true,
-        openEffect  : 'elastic',
-        closeEffect : 'elastic'
-      });
-    });
-  </script>
-  <!-- tepeye dön tuşu -->
-  <script>
-    //Get the button
-    var mybutton = document.getElementById("myBtn");
-    
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {scrollFunction()};
-    
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-      } else {
-        mybutton.style.display = "none";
-      }
-    }
-    
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
-    </script>
-
+  <!-- custom js -->
+  <script src="{% static 'js/custom.js' %}"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
 </body>
 
 </html>
