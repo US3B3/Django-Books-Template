@@ -568,12 +568,12 @@ a:focus {
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center;
 }
 
 .course_section .course_bg_box .bg_img_box img {
   min-width: 100%;
   min-height: 100%;
+  max-width: 400%;
 }
 
 .course_section .course_bg_box::before {
@@ -1512,19 +1512,19 @@ font-weight: bold;
   width: 170px;
   position: absolute;
   top: 60px;
-  left: 250px;
+  left: 190px;
   z-index: 5;
   transform: translateZ(28.5px);
 }
 .mobile-layout .book-side {
   position: absolute;
   top: 310px;
-  left: 222px;
+  left: 163px;
   transform: translateY(-15px) translateX(0px) translateZ(15px) rotateX(104deg);
 }
 
 .mobile-layout:hover > .book-cover {
-  transform: rotateX(75deg) translateY(-121px) translateZ(45px) scale(0.75);
+  transform: rotateX(75deg) translateY(-121px) translateX(-15px) translateZ(45px) scale(0.75);
 }
 .mobile-layout:hover > .book-cover + .preface {
   transform: translateY(-250px);
@@ -1551,7 +1551,7 @@ font-weight: bold;
   margin-bottom: 10px;
   min-height: 5vh;
   text-align: center;
-  width: 15rem;
+  width: 11rem;
 }
 .title i{
   font-size: 15px;
