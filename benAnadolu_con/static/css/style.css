@@ -457,17 +457,17 @@ a:focus {
 .slider_section .detail-box .btn-box .btn1 {
   display: inline-block;
   padding: 10px 15px;
-  background-color: #be2623;
+  background-color: #0e3746;
   color: #ffffff;
   border-radius: 0;
-  border: 1px solid #be2623;
+  border: 1px solid #0e3746;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
 
 .slider_section .detail-box .btn-box .btn1:hover {
-  background-color: transparent;
-  color: #be2623;
+  background-color: #fff;
+  color: #0e3746;
 }
 
 .slider_section .detail-box .btn-box .btn2 {
@@ -503,7 +503,7 @@ a:focus {
 }
 
 .slider_section .carousel-indicators li {
-  background-color: #be2623;
+  background-color: #0e3746;
   width: 12px;
   height: 12px;
   border-radius: 100%;
@@ -629,17 +629,18 @@ a:focus {
 .course_section .course_container .box .detail-box a {
   display: inline-block;
   padding: 7px 30px;
-  background-color: #be2623;
+  background-color: #0e3746;
   color: #ffffff;
   border-radius: 0;
-  border: 1px solid #be2623;
+  border: 1px solid #0e3746;
   -webkit-transition: all .2s;
   transition: all .2s;
+  margin-right: 1rem;
 }
 
 .course_section .course_container .box .detail-box a:hover {
   background-color: transparent;
-  color: #be2623;
+  color: #0e3746;
 }
 
 .course_section .owl-carousel {
@@ -670,7 +671,7 @@ a:focus {
   margin: 3px 0;
   border-radius: 100%;
   outline: none;
-  background-color: #be2623;
+  background-color: #0e3746;
   color: #ffffff;
   font-size: 20px;
 }
@@ -697,12 +698,26 @@ a:focus {
   margin-top: 45px;
 }
 
+.teacher_section .box .img-box {
+  overflow: hidden;
+}
+
 .teacher_section .box .img-box img {
   width: 100%;
 }
 
+.teacher_section .box .img-box img:hover {
+  transform: scale(1.1);
+  opacity: 0.7;
+}
+
 .teacher_section .box .detail-box {
   padding: 10px 15px;
+}
+
+.teacher_section .box .detail-box a {
+  color:#fff;
+  text-decoration: none;
 }
 
 .teacher_section .btn-box {
@@ -718,17 +733,17 @@ a:focus {
 .teacher_section .btn-box a {
   display: inline-block;
   padding: 10px 45px;
-  background-color: #be2623;
+  background-color: #0e3746;
   color: #ffffff;
   border-radius: 0;
-  border: 1px solid #be2623;
+  border: 1px solid #0e3746;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
 
 .teacher_section .btn-box a:hover {
   background-color: transparent;
-  color: #be2623;
+  color: #0e3746;
 }
 
 .client_section .heading_container {
@@ -954,7 +969,7 @@ a:focus {
 }
 
 .info_section .contact_nav a:hover {
-  color: #be2623;
+  color: #0e3746;
 }
 
 .info_section .info_top {
@@ -997,8 +1012,8 @@ a:focus {
 }
 
 .info_section .social_box a:hover {
-  color: #be2623;
-  border-color: #be2623;
+  color: #0e3746;
+  border-color: #0e3746;
 }
 
 .info_section .info_form input {
@@ -1015,17 +1030,17 @@ a:focus {
 .info_section .info_form button {
   display: inline-block;
   padding: 10px 45px;
-  background-color: #be2623;
+  background-color: #0e3746;
   color: #ffffff;
   border-radius: 0px;
-  border: 1px solid #be2623;
+  border: 1px solid #0e3746;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
 
 .info_section .info_form button:hover {
   background-color: transparent;
-  color: #be2623;
+  color: #0e3746;
 }
 
 /* footer section*/
