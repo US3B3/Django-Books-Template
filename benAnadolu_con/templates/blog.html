@@ -1,97 +1,13 @@
-<!DOCTYPE html>
-<html>
+{% extends 'partials/_base.html' %}
+{% load static %}
 
-<head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <link rel="icon" href="images/favicon.png" type="image/gif" />
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-
-  <title>Natone</title>
-
-
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet" />
-
-  <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
-  <!-- owl carousel -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
-
-</head>
-
-<body class="sub_page blogsayfa">
-
+{% block content %}
   <div class="hero_area blog">
-    <!-- header section strats -->
-    <header class="header_section ">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
-            <span>
-              Natone
-            </span>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class=""> </span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
-              <ul class="navbar-nav  ">
-                <li class="nav-item ">
-                  <a class="nav-link" href="index.html">Home </a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="about.html"> About <span class="sr-only">(current)</span> </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="course.html">Courses</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="teacher.html">Teachers</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact Us</a>
-                </li>
-              </ul>
-            </div>
-            <div class="quote_btn-container">
-              <a href="">
-                <span>
-                  Login
-                </span>
-                <i class="fa fa-user" aria-hidden="true"></i>
-              </a>
-              <form class="form-inline">
-                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                  <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-              </form>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <!-- end header section -->
 
     <section class="slider_section ">
         <div class="slider_bg_box">
           <div class="bg_img_box">
-            <img src="images/slider-bg.jpg" alt="">
+            <img src="{% static 'images/slider-bg.jpg' %}" alt="">
           </div>
         </div>
         <div id="customCarousel" class="carousel slide" data-ride="carousel">
@@ -120,11 +36,15 @@
   <section class="about_section">
     <div class="container">
       <div class="row" >
-        <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark anamakale"> 
-          <div class="col-md-6 px-0" >
-            <h2 class="display-4">Title of a longer featured blog post</h2>
-            <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
-            <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+
+        <div class="col-md-12">
+          <div class="card flex-md-row mb-4 box-shadow bg-dark onecıkanmakale">
+            <div class="jumbotron card-body d-flex flex-column align-items-start col-md-8 bg-dark lead">
+              <h2 class="display-4 text-white">Title of a longer featured blog post</h2>
+              <p class="lead my-3 text-white">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="text-white">Continue reading</a>
+            </div>
+            <img class="onecıkanmakaleresim col-md-4 col-sm-2 pr-0" src="{% static 'images/t2.jpg' %}" alt="Card image cap" style="object-fit:cover;">
           </div>
         </div>
 
@@ -140,7 +60,7 @@
                 <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
                 <a href="#">Continue reading</a>
               </div>
-              <img class="onecıkanmakale2" src="images/t1.jpg" alt="Card image cap" style="width: 200px; height: 250px;">
+              <img class="onecikanmakale2" src="{% static 'images/t1.jpg' %}" alt="Card image cap">
             </div>
           </div>
           <div class="col-md-6">
@@ -154,7 +74,7 @@
                 <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
                 <a href="#">Continue reading</a>
               </div>
-              <img class="onecıkanmakale2" src="images/t1.jpg" alt="Card image cap" style="width: 200px; height: 250px;">
+              <img class="onecikanmakale2" src="{% static 'images/t1.jpg' %}" alt="Card image cap">
             </div>
           </div>
         </div>
@@ -173,7 +93,7 @@
                   <div class="col-sm-6 col-lg-6">
                     <div class="box rounded">
                       <div class="img-box">
-                        <img src="images/t1.jpg" alt="">
+                        <img src="{% static 'images/t1.jpg' %}" alt="">
                       </div>
                       <div class="detail-box">
                         <h5>
@@ -188,7 +108,7 @@
                   <div class="col-sm-6 col-lg-6">
                     <div class="box rounded">
                       <div class="img-box">
-                        <img src="images/t2.jpg" alt="">
+                        <img src="{% static 'images/t2.jpg' %}" alt="">
                       </div>
                       <div class="detail-box">
                         <h5>
@@ -203,7 +123,7 @@
                   <div class="col-sm-6 col-lg-6">
                     <div class="box rounded">
                       <div class="img-box">
-                        <img src="images/t3.jpg" alt="">
+                        <img src="{% static 'images/t3.jpg' %}" alt="">
                       </div>
                       <div class="detail-box">
                         <h5>
@@ -218,7 +138,7 @@
                   <div class="col-sm-6 col-lg-6">
                     <div class="box rounded">
                       <div class="img-box">
-                        <img src="images/t4.jpg" alt="">
+                        <img src="{% static 'images/t4.jpg' %}" alt="">
                       </div>
                       <div class="detail-box">
                         <h5>
@@ -266,105 +186,4 @@
 
   <!-- end about section -->
 
-  <!-- info section -->
-  <section class="info_section ">
-
-    <div class="container">
-      <div class="info_top ">
-        <div class="row ">
-          <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="info_detail">
-              <a href="index.html">
-                <h4>
-                  Natone
-                </h4>
-              </a>
-              <p>
-                Soluta odit exercitationem rerum aperiam eos consectetur impedit delectus qui reiciendis, distinctio, asperiores fuga labore a? Magni natus.
-              </p>
-              <div class="social_box">
-                <a href="">
-                  <i class="fa fa-facebook" aria-hidden="true"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-twitter" aria-hidden="true"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-linkedin" aria-hidden="true"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-instagram" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 mx-auto">
-            <h4>
-              Contact us
-            </h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit
-            </p>
-            <div class="contact_nav">
-              <a href="">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span>
-                  Location
-                </span>
-              </a>
-              <a href="">
-                <i class="fa fa-phone" aria-hidden="true"></i>
-                <span>
-                  Call : +01 123455678990
-                </span>
-              </a>
-              <a href="">
-                <i class="fa fa-envelope" aria-hidden="true"></i>
-                <span>
-                  Email : demo@gmail.com
-                </span>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="info_form">
-              <h4>
-                SIGN UP TO OUR NEWSLETTER
-              </h4>
-              <form action="">
-                <input type="text" placeholder="Enter Your Email" />
-                <button type="submit">
-                  Subscribe
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- end info_section -->
-
-  <!-- jQery -->
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <!-- bootstrap js -->
-  <script src="js/bootstrap.js"></script>
-  <!-- owl carousel -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <!-- custom js -->
-  <script src="js/custom.js"></script>
-  <!-- Google Map -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
-  <!-- End Google Map -->
-  <script src="deneme/holder.js"></script>
-  <script>
-    Holder.addTheme('thumb', {
-      bg: '#55595c',
-      fg: '#eceeef',
-      text: 'Thumbnail'
-    });
-  </script>
-
-</body>
-
-</html>
+  {% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'partials/_base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <div class="hero_area makale-sayfa">
+    <section class="slider_section ">
+        <div class="slider_bg_box">
+          <div class="bg_img_box">
+            <img src="{% static 'images/slider-bg.jpg' %}" alt="">
+          </div>
+        </div>
+        <div id="customCarousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="container ">
+                <div class="row">
+                  <div class="col-md-7 mx-auto">
+                    <div class="detail-box">
+                      <h1>
+                        Ben Anadolu
+                      </h1>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </section>
+
+  </div>
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 blog-main">
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,</p>
+        </div>
+        <aside class="col-md-3 blog-sidebar bg-light">
+          <div class="p-3">
+            <h4>Diğer Başlıklar</h4>
+            <ol class="list-unstyled mb-0">
+              <li>
+                <a href="#" class="text-info">Deneme1</a>
+              </li>
+              <li>
+                <a href="#" class="text-info">Deneme2</a>
+              </li>
+              <li>
+                <a href="#" class="text-info">Deneme3</a>
+              </li>
+              <li>
+                <a href="#" class="text-info">Deneme4</a>
+              </li>
+              <li>
+                <a href="#" class="text-info">Deneme5</a>
+              </li>
+            </ol>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  {% endblock %}

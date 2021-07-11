@@ -98,13 +98,16 @@ body {
 
 }
 
-.blogsayfa .onecikanmakale {
-  width: 200px; 
-  height: 250px;
+.blogsayfa .onecikanmakaleresim {
+  object-fit: cover;
+}
+
+.blogsayfa .onecikanmakale2 {
+  width: 10rem; 
+  object-fit: cover;
 }
 
 .blogsayfa .about_section .anamakale {
-  background-image: url(../images/t2.jpg); 
   overflow: hidden; 
   background-repeat: no-repeat; 
   background-position: right;
@@ -135,16 +138,12 @@ body {
   height: auto;
 }
 
-/* 
-This is the starting grid for each video with thumbnails 4 across for the largest screen size.
-It's important to use percentages or there may be gaps on the right side of the page. 
-*/
-
 .videosayfa .video {
   background: rgb(252, 252, 252);
   padding-bottom: 20px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
   width: 23%; /* Thumbnails 4 across */
+  height: 18vh;
   margin: 1%;
   float: left;
   transition: all, 0.3s, ease;
@@ -218,6 +217,18 @@ It's important to use percentages or there may be gaps on the right side of the 
 
 .videosayfa .fancybox-overlay-fixed {
   background-color: rgba(0,0,0,0.7);
+}
+
+.videodetail {
+  margin: 3vh;
+}
+
+.videosayfa .pagination {
+  margin-top: 1rem;
+}
+
+.videosayfa .pagination a {
+  color:#272727;
 }
 
 .sub_page .header_section {
@@ -1476,7 +1487,7 @@ font-weight: bold;
   color: var(--font-color);
 }
 .mobile-layout {
-  width: 325px;
+  width: 265px;
   height: 475px;
   margin: 30px 0;
   perspective: 500px;
@@ -1522,6 +1533,7 @@ font-weight: bold;
 .book-cover img:first-child {
   width: 170px;
   height: 255px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 .mobile-layout .book-top {
   width: 170px;

@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<div class="hero_area">
+  <div class="hero_area">
     <!-- slider section -->
     <section class="slider_section ">
       <div class="slider_bg_box">
@@ -19,11 +19,35 @@
                 <div class="col-md-7 mx-auto">
                   <div class="detail-box">
                     <h1>
-                      Ben Anadolu Projesi<br/>
+                      Ben Anadolu Projesi<br />
                       Nedir?
                     </h1>
                     <p>
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus quidem maiores perspiciatis, illo maxime voluptatem a itaque suscipit.
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus quidem maiores perspiciatis, illo
+                      maxime voluptatem a itaque suscipit.
+                    </p>
+                    <div class="btn-box">
+                      <a href="{% url 'sayfa' %}" class="btn1">
+                        Devamını Oku
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-7 mx-auto">
+                  <div class="detail-box">
+                    <h1>
+                      Ben Anadolu Projesi<br />
+                      Nedir?
+                    </h1>
+                    <p>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus quidem maiores perspiciatis, illo
+                      maxime voluptatem a itaque suscipit.
                     </p>
                     <div class="btn-box">
                       <a href="" class="btn1">
@@ -41,33 +65,12 @@
                 <div class="col-md-7 mx-auto">
                   <div class="detail-box">
                     <h1>
-                      Ben Anadolu Projesi<br/>
+                      Ben Anadolu Projesi<br />
                       Nedir?
                     </h1>
                     <p>
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus quidem maiores perspiciatis, illo maxime voluptatem a itaque suscipit.
-                    </p>
-                    <div class="btn-box">
-                      <a href="" class="btn1">
-                        Devamını Oku
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-7 mx-auto">
-                  <div class="detail-box">
-                    <h1>
-                      Ben Anadolu Projesi<br/>
-                      Nedir?
-                    </h1>
-                    <p>
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus quidem maiores perspiciatis, illo maxime voluptatem a itaque suscipit.
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus quidem maiores perspiciatis, illo
+                      maxime voluptatem a itaque suscipit.
                     </p>
                     <div class="btn-box">
                       <a href="" class="btn1">
@@ -110,9 +113,10 @@
               </h2>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti dolorem eum consequuntur ipsam repellat dolor soluta aliquid laborum, eius odit consectetur vel quasi in quidem, eveniet ab est corporis tempore.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti dolorem eum consequuntur ipsam repellat
+              dolor soluta aliquid laborum, eius odit consectetur vel quasi in quidem, eveniet ab est corporis tempore.
             </p>
-            <a href="">
+            <a href="{% url 'hakkinda' %}">
               Devamını Oku
             </a>
           </div>
@@ -137,7 +141,8 @@
           Video Dersler
         </h2>
         <p>
-          It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem
+          It is a long established fact that a reader will be distracted by the readable content of a page when looking
+          at its layout. The point of using Lorem
         </p>
       </div>
       <div class="course_container">
@@ -167,7 +172,7 @@
                   <a href="">
                     Makale
                   </a>
-              </div>
+                </div>
               </div>
             </div>
           </div>
@@ -196,7 +201,7 @@
                   <a href="">
                     Makale
                   </a>
-              </div>
+                </div>
               </div>
             </div>
           </div>
@@ -225,7 +230,7 @@
                   <a href="">
                     Makale
                   </a>
-              </div>
+                </div>
               </div>
             </div>
           </div>
@@ -254,7 +259,7 @@
                   <a href="">
                     Makale
                   </a>
-              </div>
+                </div>
               </div>
             </div>
           </div>
@@ -287,7 +292,7 @@
                 <h5>
                   Alice Stark
                 </h5>
-              </a>  
+              </a>
               <h6>
                 Teacher
               </h6>
@@ -299,14 +304,14 @@
             <div class="img-box">
               <a href="#">
                 <img src="{% static 'images/t2.jpg' %}" alt="">
-              </a>  
+              </a>
             </div>
             <div class="detail-box">
-              <a href="#">  
+              <a href="#">
                 <h5>
                   Martin Evans
                 </h5>
-              </a>  
+              </a>
               <h6>
                 Teacher
               </h6>
@@ -316,9 +321,9 @@
         <div class="col-sm-6 col-lg-3">
           <div class="box">
             <div class="img-box">
-              <a href="#">  
+              <a href="#">
                 <img src="{% static 'images/t3.jpg' %}" alt="">
-              </a>  
+              </a>
             </div>
             <div class="detail-box">
               <a href="#">
@@ -337,7 +342,7 @@
             <div class="img-box">
               <a href="#">
                 <img src="{% static 'images/t4.jpg' %}" alt="">
-              </a>  
+              </a>
             </div>
             <div class="detail-box">
               <a href="#">
@@ -353,7 +358,7 @@
         </div>
       </div>
       <div class="btn-box">
-        <a href="">
+        <a href="{% url 'biyografi' %}">
           View All
         </a>
       </div>
@@ -505,6 +510,5 @@
     </div>
   </section>
   <!-- end contact section -->
-  
 
-  {% endblock %} 
+  {% endblock %}

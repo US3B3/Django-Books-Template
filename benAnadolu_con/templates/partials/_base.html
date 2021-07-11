@@ -32,7 +32,7 @@
   <!-- fancybox -->
   <link rel="stylesheet" href="{% static 'css/fancybox.css' %}" />
   <!-- w3 css -->
-  <link rel="stylesheet" href="{% static 'w3.css' %}">
+  <link rel="stylesheet" href="{% static 'css/w3.css' %}">
 
 </head>
 
@@ -41,9 +41,17 @@
 <!-- / Navbar -->
 
 {% if request.path == "/" %} 
-    <body>
+  <body>
+{% elif request.path == "/blog/" %}
+  <body class="sub_page blogsayfa">
+{% elif request.path == "/videoders/" %}
+  <body class="sub_page videosayfa">
+{% elif request.path == "/galeri/" %}
+  <body class="sub_page fotogaleri"> 
+{% elif request.path == "/vitrin/" %}
+  <body class="sub_page fotogaleri">  
 {% else %}
-    <body class="sub_page">
+  <body class="sub_page">
 {% endif %}
 
 <button onclick="topFunction()" id="myBtn" title="Go to top"> <i class="fa fa-angle-up"></i> </button>
@@ -69,8 +77,8 @@
   <script src="{% static 'js/jquery.fancybox.js' %}"></script>
   <!-- custom js -->
   <script src="{% static 'js/custom.js' %}"></script>
-    <!-- Google Map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
 </body>
 
 </html>
