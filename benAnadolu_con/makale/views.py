@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def makale_list(request):
+    return render(request, "blog.html")
