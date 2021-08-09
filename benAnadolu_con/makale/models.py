@@ -8,6 +8,8 @@ class Makale(models.Model):
     resim = models.ImageField(upload_to="makale/%Y/%m/%d/", default="varsayilan.jpg")
     tarih = models.DateTimeField(auto_now=True)
     erisim = models.BooleanField(default=True)
+    basMakale = models.BooleanField(default=False)
+    taliMakale = models.BooleanField(default=False)
 
     def __str__(self):
         return self.isim
