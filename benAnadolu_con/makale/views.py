@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from . models import Makale
+from . models import Kategori, Makale
 
 def makale_list(request):
     makaleler = Makale.objects.all().order_by('-tarih')
@@ -11,3 +11,12 @@ def makale_list(request):
         'talimakale' : talimakale[0:2]
     }
     return render(request, "blog.html", context)
+
+def makale_detay(request, kategori_slug, makale_isim):
+    makale = Makale.objects.get(kategori__slug=kategori_slug, isim = makale_isim)
+
+    context = {
+        'makale' : makale
+    }
+
+    return render(request, 'sayfa.html', context)

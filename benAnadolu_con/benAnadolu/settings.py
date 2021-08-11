@@ -47,6 +47,14 @@ INSTALLED_APPS = [
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 
+CKEDITOR_CONFIGS = {
+    'default': {
+        'removePlugins' : 'stylesheetparser',
+        'allowedContent' : True,
+        'enterMode' : "2",
+    },
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
