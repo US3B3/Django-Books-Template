@@ -5,6 +5,8 @@ from ckeditor_uploader.fields import RichTextUploadingField
 class Kategori(models.Model):
     isim = models.CharField(max_length = 50, null = True)
     slug = models.SlugField(max_length=50,unique=True,null=True)
+    resim = models.ImageField(upload_to="kategori/%Y/%m/%d/", default="varsayilan.jpg")
+    aciklama = RichTextUploadingField(blank=True, null=True)
 
     def __str__(self):
         return self.isim

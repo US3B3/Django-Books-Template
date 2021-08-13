@@ -52,6 +52,8 @@ CKEDITOR_CONFIGS = {
         'removePlugins' : 'stylesheetparser',
         'allowedContent' : True,
         'enterMode' : "2",
+        'entities' : False,
+        'format_tags' : 'p;h1;h2;pre',
     },
 }
 

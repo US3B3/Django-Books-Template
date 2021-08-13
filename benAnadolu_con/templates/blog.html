@@ -40,7 +40,7 @@
           <div class="card flex-md-row mb-4 box-shadow bg-dark onecıkanmakale">
             <div class="jumbotron card-body d-flex flex-column align-items-start col-md-8 bg-dark lead">
               <h2 class="display-4 text-white">{{ basmakale.isim | upper }}</h2>
-              <p class="lead my-3 text-white">{{ basmakale.aciklama | truncatechars:405 }}</p>
+              <p class="lead my-3 text-white">{{ basmakale.aciklama | safe | truncatechars:405 }}</p>
               <a href="{% url 'makale_detay' basmakale.kategori.slug basmakale.isim %}" class="text-white">Devamını Oku</a>
             </div>
             <img class="onecıkanmakaleresim col-md-4 col-sm-2 pr-0" src="{{basmakale.resim.url}}" alt="Card image cap" style="object-fit:cover;">
@@ -53,9 +53,9 @@
             <div class="card flex-md-row mb-4 box-shadow h-md-250">
               <div class="card-body d-flex flex-column align-items-start">
                 <h3 class="mb-0">
-                  <a class="text-dark" href="#">{{ tali.isim }}</a>
+                  <a class="text-dark" href="#">{{ tali.isim | upper }}</a>
                 </h3><br/>
-                <p class="card-text mb-auto">{{ tali.aciklama | truncatechars:65 }}</p>
+                <p class="card-text mb-auto">{{ tali.aciklama | safe | truncatechars:65 }}</p>
                 <a href="{% url 'makale_detay' tali.kategori.slug tali.isim %}">Devamını Oku</a>
               </div>
               <img class="onecikanmakale2" src="{{ tali.resim.url }}" alt="Card image cap">
@@ -103,7 +103,7 @@
   
           <aside class="col-md-2 blog-sidebar">
             <div class="p-3">
-              <h4>Archives</h4>
+              <h4>Kategoriler</h4>
               <ol class="list-unstyled mb-0">
                 <li><a href="#">March 2014</a></li>
                 <li><a href="#">February 2014</a></li>

@@ -20,3 +20,10 @@ def makale_detay(request, kategori_slug, makale_isim):
     }
 
     return render(request, 'sayfa.html', context)
+
+def kategori_list(request):
+    kategoriler = Kategori.objects.order_by('isim')[0:11].all()
+    context = {
+        'kategoriler' : kategoriler,
+    }
+    return render(request, "kategoriler.html", context)
