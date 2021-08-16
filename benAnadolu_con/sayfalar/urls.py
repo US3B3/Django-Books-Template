@@ -1,13 +1,12 @@
 from django.urls import path
-from . import views
+from sayfalar.views import *
 
 urlpatterns = [
-    path('', views.index, name="index"),
-    path('videoders/', views.videoders, name="videoders"),
-    path('galeri/', views.galeri, name="galeri"),
-    path('vitrin/', views.vitrin, name="vitrin"),
-    path('biyografi/', views.biyografi, name="biyografi"),
-    path('hakkinda/', views.hakkinda, name="hakkinda"),
-    path('sayfa/', views.sayfa, name="sayfa"),
-    path('dene/', views.dene, name="dene"),
+    path('', IndexView.as_view(), name="index"),
+    path('videoders/', VideoView.as_view(), name="videoders"),
+    path('galeri/', GaleriView.as_view(), name="galeri"),
+    path('vitrin/', VitrinView.as_view(), name="vitrin"),
+    path('biyografi/', BiyografiView.as_view(), name="biyografi"),
+    path('hakkinda/', HakkındaView.as_view(), name="hakkinda"),
+    path('sayfa/', SayfaView.as_view(), name="sayfa"),
 ]

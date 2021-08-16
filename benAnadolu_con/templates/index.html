@@ -276,86 +276,30 @@
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          Makaleler
+          Biyografiler
         </h2>
       </div>
       <div class="row">
+
+      {% for biyografi in biyografiler %}
         <div class="col-sm-6 col-lg-3">
           <div class="box">
             <div class="img-box">
               <a href="#">
-                <img src="{% static 'images/t1.jpg' %}" alt="">
+                <img src="{{ biyografi.resim.url }}" alt="">
               </a>
             </div>
             <div class="detail-box">
-              <a href="#">
+              <a href="{% url 'makale_detay' biyografi.kategori.slug biyografi.makale_slug %}">
                 <h5>
-                  Alice Stark
+                  {{ biyografi.isim }}
                 </h5>
               </a>
-              <h6>
-                Teacher
-              </h6>
             </div>
           </div>
         </div>
-        <div class="col-sm-6 col-lg-3">
-          <div class="box">
-            <div class="img-box">
-              <a href="#">
-                <img src="{% static 'images/t2.jpg' %}" alt="">
-              </a>
-            </div>
-            <div class="detail-box">
-              <a href="#">
-                <h5>
-                  Martin Evans
-                </h5>
-              </a>
-              <h6>
-                Teacher
-              </h6>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <div class="box">
-            <div class="img-box">
-              <a href="#">
-                <img src="{% static 'images/t3.jpg' %}" alt="">
-              </a>
-            </div>
-            <div class="detail-box">
-              <a href="#">
-                <h5>
-                  Jane Dunn
-                </h5>
-              </a>
-              <h6>
-                Teacher
-              </h6>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <div class="box">
-            <div class="img-box">
-              <a href="#">
-                <img src="{% static 'images/t4.jpg' %}" alt="">
-              </a>
-            </div>
-            <div class="detail-box">
-              <a href="#">
-                <h5>
-                  Clara Mark
-                </h5>
-              </a>
-              <h6>
-                Teacher
-              </h6>
-            </div>
-          </div>
-        </div>
+      {% endfor %}
+
       </div>
       <div class="btn-box">
         <a href="{% url 'biyografi' %}">
@@ -373,83 +317,42 @@
     <div class="container">
       <div class="heading_container">
         <h2>
-          Pano
+          Makaleler
         </h2>
       </div>
       <div id="carouselExample2Controls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
+
+        
           <div class="carousel-item active">
             <div class="row">
+            
               <div class="col-md-11 col-lg-10 mx-auto">
-                <div class="box">
-                  <div class="img-box">
-                    <img src="{% static 'images/client.jpg' %}" alt="" />
-                  </div>
-                  <div class="detail-box">
-                    <div class="name">
-                      <i class="fa fa-quote-left" aria-hidden="true"></i>
-                      <h6>
-                        Siaalya
-                      </h6>
+              {% for makale in makaleler %}
+                <a href="{% url 'makale_detay' makale.kategori.slug makale.makale_slug %}">
+                  
+                  <div class="box">
+                    <div class="img-box">
+                      <img src="" alt="" />
                     </div>
-                    <p>
-                      It is a long established fact that a reader will be
-                      distracted by the readable cIt is a long established fact
-                      that a reader will be distracted by the readable c
-                    </p>
+                    <div class="detail-box">
+                      <div class="name">
+                        <i class="fa fa-quote-left" aria-hidden="true"></i>
+                        <h6>
+                          {{ makale.isim }}
+                        </h6>
+                      </div>
+                      {{ makale.aciklama | truncatechars:200 }}
+                    </div>
                   </div>
-                </div>
+                </a>
+                {% endfor %}
               </div>
+              
             </div>
           </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-md-11 col-lg-10 mx-auto">
-                <div class="box">
-                  <div class="img-box">
-                    <img src="{% static 'images/client.jpg' %}" alt="" />
-                  </div>
-                  <div class="detail-box">
-                    <div class="name">
-                      <i class="fa fa-quote-left" aria-hidden="true"></i>
-                      <h6>
-                        Siaalya
-                      </h6>
-                    </div>
-                    <p>
-                      It is a long established fact that a reader will be
-                      distracted by the readable cIt is a long established fact
-                      that a reader will be distracted by the readable c
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-md-11 col-lg-10 mx-auto">
-                <div class="box">
-                  <div class="img-box">
-                    <img src="{% static 'images/client.jpg' %}" alt="" />
-                  </div>
-                  <div class="detail-box">
-                    <div class="name">
-                      <i class="fa fa-quote-left" aria-hidden="true"></i>
-                      <h6>
-                        Siaalya
-                      </h6>
-                    </div>
-                    <p>
-                      It is a long established fact that a reader will be
-                      distracted by the readable cIt is a long established fact
-                      that a reader will be distracted by the readable c
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        
+      
         </div>
         <div class="carousel_btn-container">
           <a class="carousel-control-prev" href="#carouselExample2Controls" role="button" data-slide="prev">

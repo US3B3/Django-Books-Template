@@ -44,7 +44,7 @@
                   <a class="text-dark" href="{% url 'kategori_detay' kategori.isim %}">{{ kategori.isim | upper }}</a>
                 </h3><br/>
                 <p class="card-text mb-3"> Açıklama </p>
-                <a href="#">Devamını Oku</a>
+                <a href="{% url 'kategori_detay' kategori.isim %}">Devamını Oku</a>
               </div>
               <img class="onecikanmakale2" src="{{ kategori.resim.url }}" alt="Card image cap" width="30%">
             </div>

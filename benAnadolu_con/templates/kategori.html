@@ -54,7 +54,7 @@
                           <img src="{{detay.resim.url}}" alt="">
                         </div>
                         <div class="detail-box">
-                          <a href="{% url 'makale_detay' detay.kategori.slug detay.isim %}">
+                          <a href="{% url 'makale_detay' detay.kategori.slug detay.makale_slug %}">
                             <h5>
                               {{ detay.isim | upper }}
                             </h5>

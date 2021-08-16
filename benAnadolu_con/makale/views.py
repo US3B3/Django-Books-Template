@@ -14,8 +14,8 @@ def makale_list(request):
     }
     return render(request, "blog.html", context)
 
-def makale_detay(request, kategori_slug, makale_isim):
-    makale = Makale.objects.get(kategori__slug=kategori_slug, isim = makale_isim)
+def makale_detay(request, kategori_slug, makale_slug):
+    makale = Makale.objects.get(kategori__slug=kategori_slug, makale_slug = makale_slug)
 
     context = {
         'makale' : makale
@@ -40,3 +40,10 @@ def kategori_detay(request, kategori_isim):
     }
 
     return render(request, 'kategori.html', context)
+
+def etiket_list(request):
+    kategoriler = Kategori.objects.order_by('isim')[0:11].all()
+    context = {
+        'kategoriler' : kategoriler,
+    }
+    return render(request, "kategoriler.html", context)

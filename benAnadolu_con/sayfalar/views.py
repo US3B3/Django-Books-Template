@@ -1,28 +1,38 @@
+from makale.models import Makale, Kategori
 from django.shortcuts import render
+from django.views.generic import TemplateView
 
-def index(request):
-    return render(request, "index.html")
+class IndexView(TemplateView):
+    template_name="index.html"
 
-def hakkinda(request):
-    return render(request, "hakkinda.html")
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['biyografiler'] = Makale.objects.filter(kategori__isim="Biyografi").all().order_by("tarih")[:4]
+        context['makaleler'] = Makale.objects.exclude(kategori__isim="Biyografi").all().order_by("tarih")[:4]
+        return context
 
-def blog(request):
-    return render(request, "blog.html")
+class HakkındaView(TemplateView):
+    template_name="hakkinda.html"
 
-def videoders(request):
-    return render(request, "videoders.html")
+class BlogView(TemplateView):
+    template_name="blog.html"
 
-def galeri(request):
-    return render(request, "galeri.html")
+class VideoView(TemplateView):
+    template_name="videoders.html"
 
-def vitrin(request):
-    return render(request, "vitrin.html")
+class GaleriView(TemplateView):
+    template_name="galeri.html"
 
-def biyografi(request):
-    return render(request, "biyografi.html")
+class VitrinView(TemplateView):
+    template_name="vitrin.html"
 
-def sayfa(request):
-    return render(request, "sayfa.html")
+class BiyografiView(TemplateView):
+    template_name="biyografi.html"
 
-def dene(request):
-    return render(request, "dene.html")
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['biyografiler'] = Makale.objects.filter(kategori__isim="Biyografi").all().order_by("tarih")[:4]
+        return context
+
+class SayfaView(TemplateView):
+    template_name="sayfa.html"
