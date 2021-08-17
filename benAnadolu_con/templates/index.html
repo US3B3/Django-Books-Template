@@ -285,7 +285,7 @@
         <div class="col-sm-6 col-lg-3">
           <div class="box">
             <div class="img-box">
-              <a href="#">
+              <a href="{% url 'makale_detay' biyografi.kategori.slug biyografi.makale_slug %}">
                 <img src="{{ biyografi.resim.url }}" alt="">
               </a>
             </div>
@@ -323,35 +323,29 @@
       <div id="carouselExample2Controls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
 
-        
-          <div class="carousel-item active">
-            <div class="row">
-            
-              <div class="col-md-11 col-lg-10 mx-auto">
-              {% for makale in makaleler %}
-                <a href="{% url 'makale_detay' makale.kategori.slug makale.makale_slug %}">
-                  
+        {% for makale in makaleler %}
+          <div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}">
+            <div class="row">            
+              <div class="col-md-11 col-lg-10 mx-auto">             
+                <a href="{% url 'makale_detay' makale.kategori.slug makale.makale_slug %}">                  
                   <div class="box">
                     <div class="img-box">
-                      <img src="" alt="" />
+                      <img src="{{ makale.resim.url }}" alt="" />
                     </div>
                     <div class="detail-box">
                       <div class="name">
-                        <i class="fa fa-quote-left" aria-hidden="true"></i>
                         <h6>
                           {{ makale.isim }}
                         </h6>
                       </div>
-                      {{ makale.aciklama | truncatechars:200 }}
+                      {{ makale.aciklama | striptags | truncatechars:200 }}
                     </div>
                   </div>
-                </a>
-                {% endfor %}
+                </a>               
               </div>
-              
             </div>
           </div>
-        
+        {% endfor %}
       
         </div>
         <div class="carousel_btn-container">

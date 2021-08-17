@@ -51,7 +51,9 @@
                     <div class="col-sm-6 col-lg-6">
                       <div class="box rounded">
                         <div class="img-box">
-                          <img src="{{detay.resim.url}}" alt="">
+                          <a href="{% url 'makale_detay' detay.kategori.slug detay.makale_slug %}">
+                            <img src="{{detay.resim.url}}" alt="">
+                          </a>
                         </div>
                         <div class="detail-box">
                           <a href="{% url 'makale_detay' detay.kategori.slug detay.makale_slug %}">
