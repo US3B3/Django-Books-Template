@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sayfalar.apps.SayfalarConfig',
+    'videolar.apps.VideolarConfig',
     'makale.apps.MakaleConfig',
     'ckeditor',
     'ckeditor_uploader',

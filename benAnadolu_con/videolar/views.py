@@ -1,3 +1,6 @@
-from django.shortcuts import render
+from django.views.generic.list import ListView
+from videolar.models import VideoDers
 
-# Create your views here.
+class VideolarListView(ListView):
+    model = VideoDers
+    template_name = 'videoders.html'
