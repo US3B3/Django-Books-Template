@@ -3,6 +3,6 @@ from . models import VideoDers
 
 @admin.register(VideoDers)
 class VideoDersAdmin(admin.ModelAdmin):
-    list_display = ('isim','erisim', 'tarih',)
+    list_display = ('videobaslik','erisim', )
     list_filter = ('erisim',)
-    search_fields = ('isim', 'aciklama')
+    search_fields = ('videobaslik', 'aciklama')

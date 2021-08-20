@@ -38,11 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sayfalar.apps.SayfalarConfig',
-    'videolar.apps.VideolarConfig',
+    'videoders.apps.VideodersConfig',
     'makale.apps.MakaleConfig',
     'ckeditor',
     'ckeditor_uploader',
     'django_rename_app',
+    'youtube_thumbnail',
 
 ]
 
@@ -149,3 +150,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = "/medya/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'medya')
+

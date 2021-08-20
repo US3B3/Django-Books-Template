@@ -34,69 +34,28 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
+        {% for video in videolar %}
           <article class="video">
             <figure>
-              <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/svTfwQ6ukmA">
-              <img class="videoThumb" src="https://img.youtube.com/vi/svTfwQ6ukmA/maxresdefault.jpg"></a>
+              <a class="fancybox fancybox.iframe" href="{{ video.videourl }}">
+              {% load youtube_thumbnail %}
+              <img class="videoThumb" src="{% youtube_thumbnail_url video.videourl %}"></a>
             </figure>
-            <h2 class="videoTitle">29 Haziran 2021<br></h2>
+            <h2 class="videoTitle">{{ video.videoid }}<br></h2>
           </article>
+        {% endfor %}
 
+        {% for ana in anan %}
           <article class="video">
             <figure>
-              <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/kDjHh5_g38w">
-              <img class="videoThumb" src="https://img.youtube.com/vi/kDjHh5_g38w/maxresdefault.jpg"></a>
+              <a class="fancybox fancybox.iframe" href="#">
+              {% load youtube_thumbnail %}
+              <img class="videoThumb" src="#"></a>
             </figure>
-            <h2 class="videoTitle">Mesopotamia</h2>
+            <h2 class="videoTitle">{{ ana.isim }}<br></h2>
           </article>
+        {% endfor %}
 
-          <article class="video">
-            <figure>
-              <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/svTfwQ6ukmA">
-              <img class="videoThumb" src="https://img.youtube.com/vi/svTfwQ6ukmA/maxresdefault.jpg"></a>
-            </figure>
-            <h2 class="videoTitle">29 Haziran 2021<br></h2>
-          </article>
-
-          <article class="video">
-            <figure>
-              <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/kDjHh5_g38w">
-              <img class="videoThumb" src="https://img.youtube.com/vi/kDjHh5_g38w/maxresdefault.jpg"></a>
-            </figure>
-            <h2 class="videoTitle">Mesopotamia</h2>
-          </article>
-
-          <article class="video">
-            <figure>
-              <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/svTfwQ6ukmA">
-              <img class="videoThumb" src="https://img.youtube.com/vi/svTfwQ6ukmA/maxresdefault.jpg"></a>
-            </figure>
-            <h2 class="videoTitle">29 Haziran 2021<br></h2>
-          </article>
-
-          <article class="video">
-            <figure>
-              <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/kDjHh5_g38w">
-              <img class="videoThumb" src="https://img.youtube.com/vi/kDjHh5_g38w/maxresdefault.jpg"></a>
-            </figure>
-            <h2 class="videoTitle">Mesopotamia</h2>
-          </article>
-
-          <article class="video">
-            <figure>
-              <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/svTfwQ6ukmA">
-              <img class="videoThumb" src="https://img.youtube.com/vi/svTfwQ6ukmA/maxresdefault.jpg"></a>
-            </figure>
-            <h2 class="videoTitle">29 Haziran 2021<br></h2>
-          </article>
-
-          <article class="video">
-            <figure>
-              <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/kDjHh5_g38w">
-              <img class="videoThumb" src="https://img.youtube.com/vi/kDjHh5_g38w/maxresdefault.jpg"></a>
-            </figure>
-            <h2 class="videoTitle">Mesopotamia</h2>
-          </article>
         </div>
       </div>
       <nav class="d-flex justify-content-center align-middle" aria-label="">

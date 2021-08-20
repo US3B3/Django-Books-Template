@@ -147,20 +147,23 @@
       </div>
       <div class="course_container">
         <div class=" course_owl-carousel owl-carousel owl-theme ">
+
+        {% for video in videolar %}
           <div class="item ">
             <div class="box">
               <div class="img-box">
                 <article class="video">
                   <figure>
-                    <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/paG__3FBLzI">
-                      <img class="videoThumb" src="{% static 'images/c1.jpg' %}" alt="">
+                    <a class="fancybox fancybox.iframe" href="{{ video.videourl }}">
+                    {% load youtube_thumbnail %}
+                      <img class="videoThumb" src="{% youtube_thumbnail_url 'https://www.youtube.com/watch?v=ZeYIp1PrWXc' %}" alt="">
                     </a>
                   </figure>
                 </article>
               </div>
               <div class="detail-box">
                 <h4>
-                  Learn JavaScript
+                  {{ video.videobaslik | truncatechars:50 }}
                 </h4>
                 <p>
                   Incidunt veritatis adipisci autem repellat possimus id eos praesentium, beatae repudiandae.
@@ -176,90 +179,8 @@
               </div>
             </div>
           </div>
-          <div class="item">
-            <div class="box">
-              <div class="img-box">
-                <article class="video">
-                  <figure>
-                    <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/paG__3FBLzI">
-                      <img class="videoThumb" src="{% static 'images/c2.jpg' %}" alt="">
-                    </a>
-                  </figure>
-                </article>
-              </div>
-              <div class="detail-box">
-                <h4>
-                  Learn Python
-                </h4>
-                <p>
-                  Incidunt veritatis adipisci autem repellat possimus id eos praesentium, beatae repudiandae.
-                </p>
-                <div class="row justify-content-center">
-                  <a href="">
-                    Video
-                  </a>
-                  <a href="">
-                    Makale
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="box">
-              <div class="img-box">
-                <article class="video">
-                  <figure>
-                    <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/paG__3FBLzI">
-                      <img class="videoThumb" src="{% static 'images/c3.jpg' %}" alt="">
-                    </a>
-                  </figure>
-                </article>
-              </div>
-              <div class="detail-box">
-                <h4>
-                  Learn Html
-                </h4>
-                <p>
-                  Incidunt veritatis adipisci autem repellat possimus id eos praesentium, beatae repudiandae.
-                </p>
-                <div class="row justify-content-center">
-                  <a href="">
-                    Video
-                  </a>
-                  <a href="">
-                    Makale
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="box">
-              <div class="img-box">
-                <article class="video">
-                  <figure>
-                    <a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/paG__3FBLzI">
-                      <img class="videoThumb" src="{% static 'images/c4.jpg' %}" alt="">
-                    </a>
-                  </figure>
-                </article>
-              </div>
-              <div class="detail-box">
-                <h4>
-                  Learn Java
-                </h4>
-                <p>
-                  Incidunt veritatis adipisci autem repellat possimus id eos praesentium, beatae repudiandae.
-                </p>
-                <div class="row justify-content-center">
-                  <a href="">
-                    İzle
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+        {% endfor %}
+
         </div>
       </div>
     </div>

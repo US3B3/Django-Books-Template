@@ -1,6 +1,7 @@
 from makale.models import Makale, Kategori
 from django.shortcuts import render
 from django.views.generic import TemplateView
+from videoders.models import VideoDers
 
 class IndexView(TemplateView):
     template_name="index.html"
@@ -9,6 +10,7 @@ class IndexView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['biyografiler'] = Makale.objects.filter(kategori__isim="Biyografi").all().order_by("tarih")[:4]
         context['makaleler'] = Makale.objects.exclude(kategori__isim="Biyografi").all().order_by("tarih")[:4]
+        context['videolar'] = VideoDers.objects.all().order_by("tarih")
         return context
 
 class HakkındaView(TemplateView):

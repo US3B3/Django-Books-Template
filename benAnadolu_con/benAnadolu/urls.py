@@ -8,5 +8,5 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('', include('sayfalar.urls')),
     path('blog/', include('makale.urls')),
-    path('video/', include('videolar.urls')),
+    path('video/', include('videoders.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
