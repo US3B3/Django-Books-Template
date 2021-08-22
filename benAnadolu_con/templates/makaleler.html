@@ -2,11 +2,12 @@
 {% load static %}
 
 {% block content %}
+  <div class="hero_area blog">
 
     <section class="slider_section ">
         <div class="slider_bg_box">
           <div class="bg_img_box">
-            <img src="{% static 'images/slider-bg.jpg'%}" alt="">
+            <img src="{% static 'images/slider-bg.jpg' %}" alt="">
           </div>
         </div>
         <div id="customCarousel" class="carousel slide" data-ride="carousel">
@@ -15,8 +16,10 @@
               <div class="container ">
                 <div class="row">
                   <div class="col-md-7 mx-auto">
-                    <div class="detail-box videodetail">
-                      <h1>Video Dersler</h1>
+                    <div class="detail-box">
+                      <h1>
+                        MAKALELER
+                      </h1>
                       </div>
                     </div>
                   </div>
@@ -30,34 +33,53 @@
 
   <!-- about section -->
 
-  <section class="about_section layout_padding ">
+  <section class="about_section">
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-        
-        {% for video in videolar %}
-          <article class="video">
-            <figure>
-              <a class="fancybox fancybox.iframe" href="{{ video.videourl }}">
-              <img class="videoThumb" src="https://img.youtube.com/vi/{{ video.videoid }}/hqdefault.jpg"></a>
-            </figure>
-            <h2 class="videoTitle">{{ video.videobaslik | truncatechars:35 }}<br></h2>
-          </article>
-        {% endfor %}
+          
+      <main role="main" class="container">
+        <div class="row">
+          <div class="col-md-12 blog-main">
+            <section class="teacher_section">
+              <div class="container">
+                <div class="row">
 
-        </div>
+                  {% for makale in page_obj %}
+                    <div class="col-sm-3 col-lg-3">
+                      <div class="box rounded">
+                        <div class="img-box">
+                          <img src="{{makale.resim.url}}" alt="">
+                        </div>
+                        <div class="detail-box">
+                          <a href="{% url 'makale_detay' makale.kategori.slug makale.makale_slug %}">
+                            <h5>
+                              {{ makale.isim | upper }}
+                            </h5>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  {% endfor %}
+                  
+                </div>
+              </div>
+            </section>
+
+          </div><!-- /.blog-main -->
+  
+        </div><!-- /.row -->
+      </main><!-- /.container -->     
       </div>
-
+      <br/><br/>
       <nav class="d-flex justify-content-center align-middle" aria-label="">
         <ul class="pagination">
 
-        {% if page_obj.has_previous %}
           <li class="page-item">
-            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+            <a class="page-link" href="{% url 'blog' %}" aria-label="Previous">
               <span aria-hidden="true">&laquo;</span>
               <span class="sr-only">Previous</span>
             </a>
           </li>
+        {% if page_obj.has_previous %}
           <li class="page-item">
             <a class="page-link" href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a>
           </li>
@@ -81,9 +103,9 @@
 
         </ul>
       </nav>
-
     </div>
-  </section>  
+  </section>
+
+  <!-- end about section -->
 
   {% endblock %}
-

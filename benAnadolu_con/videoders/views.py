@@ -1,24 +1,8 @@
-from django.shortcuts import render
-from videoders.models import VideoDers
-from makale.models import Makale
+from django.views.generic.list import ListView
+from videoders.models import *
 
-def VideolarView(request):
-    videolar = VideoDers.objects.all().order_by("tarih")
-    anan = Makale.objects.all()
-
-    context = {
-        'videolar' : videolar,
-        'anan' : anan
-    }
-
-    return render(request, 'videoders.html', context)
-
-"""
-class VideolarView(TemplateView):
+class VideolarView(ListView):
+    model = VideoDers
     template_name = "videoders.html"
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['videolar'] = VideoDers.objects.all().order_by("tarih")
-        return context
-"""
+    context_object_name = "videolar"
+    paginate_by = 8

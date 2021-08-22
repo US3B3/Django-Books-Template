@@ -147,6 +147,7 @@ body {
   margin: 1%;
   float: left;
   transition: all, 0.3s, ease;
+  overflow: hidden;
 }
 
 .videosayfa .video h2 {
@@ -159,7 +160,6 @@ body {
   text-align: center;
   padding: 7px 4px;
   margin: 0;
-  white-space: nowrap;
 }
  /* 
  These keep the height of each video thumbnail consistent between YouTube and Vimeo.
@@ -209,6 +209,7 @@ body {
 .videosayfa .video img {
   width: 100%;
   opacity: 1;
+  margin-top: -25px;
 }
 
 .videosayfa .video img:hover, .video img:active, .video img:focus {
@@ -1089,6 +1090,10 @@ It's important to use percentages or there may be gaps on the right side of the 
   width: 23%; /* Thumbnails 4 across */
   margin: 1%;
   float: left;
+}
+
+.videoThumb {
+  margin-top: -30px;
 }
 
  /* 

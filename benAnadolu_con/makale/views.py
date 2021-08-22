@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from . models import Kategori, Makale
+from django.core.paginator import Paginator
 
-def makale_list(request):
+def blog_list(request):
     makaleler = Makale.objects.all().order_by('-tarih')
     basmakale = Makale.objects.all().filter(basMakale = 1).order_by('-tarih')
     talimakale = Makale.objects.all().filter(taliMakale = 1).order_by('-tarih')
@@ -22,6 +23,13 @@ def makale_detay(request, kategori_slug, makale_slug):
     }
 
     return render(request, 'sayfa.html', context)
+
+def makaleler(request):
+    makaleler = Makale.objects.all().order_by('-tarih')
+    paginator = Paginator(makaleler, 8)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'makaleler.html', {'page_obj': page_obj})
 
 def kategori_list(request):
     kategoriler = Kategori.objects.order_by('isim')[0:11].all()

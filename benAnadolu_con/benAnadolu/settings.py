@@ -42,8 +42,6 @@ INSTALLED_APPS = [
     'makale.apps.MakaleConfig',
     'ckeditor',
     'ckeditor_uploader',
-    'django_rename_app',
-    'youtube_thumbnail',
 
 ]
 
