@@ -40,8 +40,9 @@
                   </span>
                   <i class="fa fa-user" aria-hidden="true"></i>
                 </a>
-                <form class="form-inline">
-                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                <form class="form-inline" method="GET" action="{% url 'arama' %}">
+                  <input class="input-text form-control" name="arama" placeholder="Ara" type="text">
+                  <button id="aramabuton" class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
                     <i class="fa fa-search" aria-hidden="true"></i>
                   </button>
                 </form>

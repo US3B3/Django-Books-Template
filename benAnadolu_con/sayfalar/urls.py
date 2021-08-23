@@ -8,4 +8,6 @@ urlpatterns = [
     path('biyografi/', BiyografiView.as_view(), name="biyografi"),
     path('hakkinda/', HakkındaView.as_view(), name="hakkinda"),
     path('sayfa/', SayfaView.as_view(), name="sayfa"),
+    path('arama/', Arama, name="arama"),
+    
 ]

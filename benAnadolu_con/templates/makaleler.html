@@ -46,17 +46,17 @@
                   {% for makale in page_obj %}
                     <div class="col-sm-3 col-lg-3">
                       <div class="box rounded">
-                        <div class="img-box">
-                          <img src="{{makale.resim.url}}" alt="">
-                        </div>
-                        <div class="detail-box">
-                          <a href="{% url 'makale_detay' makale.kategori.slug makale.makale_slug %}">
+                        <a href="{% url 'makale_detay' makale.kategori.slug makale.makale_slug %}">
+                          <div class="img-box">
+                            <img src="{{makale.resim.url}}" alt="">
+                          </div>
+                          <div class="detail-box">                            
                             <h5>
                               {{ makale.isim | upper }}
                             </h5>
-                          </a>
+                          </div>
                         </div>
-                      </div>
+                      </a>
                     </div>
                   {% endfor %}
                   

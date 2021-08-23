@@ -1,6 +1,10 @@
+from django.core import paginator
 from makale.models import Makale
 from django.views.generic import TemplateView
 from videoders.models import VideoDers
+from django.db.models import Q
+from django.shortcuts import render
+from django.core.paginator import Paginator
 
 class IndexView(TemplateView):
     template_name="index.html"
@@ -35,3 +39,12 @@ class BiyografiView(TemplateView):
 
 class SayfaView(TemplateView):
     template_name="sayfa.html"
+
+def Arama(request):
+    sonuclar = Makale.objects.filter(Q(isim__contains = request.GET['arama']) | Q(aciklama__contains = request.GET['arama']))
+
+    paginator = Paginator(sonuclar,10)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'sonuclar.html', {'sonuclar': page_obj})
+
