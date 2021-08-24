@@ -14,13 +14,27 @@
             </button>
   
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
-                <ul class="navbar-nav  ">
+              <div class="d-flex mx-auto flex-column flex-lg-row align-items-center dropdown">
+                <ul class="navbar-nav dropdown ">
                   <li class="nav-item{% if request.path == '/' %} active {% endif %}">
                     <a class="nav-link" href="{% url 'index' %}">Anasayfa<span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item{% if request.path == '/blog/' %} active {% endif %}">
-                    <a class="nav-link" href="{% url 'blog' %}">Blog</a>
+                    <a class="nav-link" href="{% url 'blog' %}">
+                      Blog <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="{% url 'makaleler' %}" class="dropdown-item">
+                          Makaleler
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{% url 'kategori_liste' %}" class="dropdown-item">
+                          Kategoriler
+                        </a>
+                      </li>
+                    </ul>
                   </li>
                   <li class="nav-item{% if request.path == '/videoders/' %} active {% endif %}">
                     <a class="nav-link" href="{% url 'videoders' %}">Video Dersler</a>
@@ -41,7 +55,7 @@
                   <i class="fa fa-user" aria-hidden="true"></i>
                 </a>
                 <form class="form-inline" method="GET" action="{% url 'arama' %}">
-                  <input class="input-text form-control" name="arama" placeholder="Ara" type="text">
+                  <input class="input-text form-control arama-input" name="arama" placeholder="Ara" type="text" id="arama">
                   <button id="aramabuton" class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
                     <i class="fa fa-search" aria-hidden="true"></i>
                   </button>

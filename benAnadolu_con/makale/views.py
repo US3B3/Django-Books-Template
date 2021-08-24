@@ -33,10 +33,10 @@ def makaleler(request):
 
 def kategori_list(request):
     kategoriler = Kategori.objects.order_by('isim')[0:11].all()
-    context = {
-        'kategoriler' : kategoriler,
-    }
-    return render(request, "kategoriler.html", context)
+    paginator = Paginator(kategoriler, 1)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'kategoriler.html', {'kategoriler': page_obj})
 
 def kategori_detay(request, kategori_isim):
     kategori_detay = Makale.objects.filter(kategori__isim=kategori_isim).all()

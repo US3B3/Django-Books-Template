@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'sayfalar.apps.SayfalarConfig',
     'videoders.apps.VideodersConfig',
+    'galeri.apps.GaleriConfig',
+    'vitrin.apps.VitrinConfig',
     'makale.apps.MakaleConfig',
     'ckeditor',
     'ckeditor_uploader',

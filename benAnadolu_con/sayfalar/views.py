@@ -1,4 +1,3 @@
-from django.core import paginator
 from makale.models import Makale
 from django.views.generic import TemplateView
 from videoders.models import VideoDers
@@ -23,12 +22,6 @@ class HakkındaView(TemplateView):
 class BlogView(TemplateView):
     template_name="blog.html"
 
-class GaleriView(TemplateView):
-    template_name="galeri.html"
-
-class VitrinView(TemplateView):
-    template_name="vitrin.html"
-
 class BiyografiView(TemplateView):
     template_name="biyografi.html"
 
@@ -43,7 +36,7 @@ class SayfaView(TemplateView):
 def Arama(request):
     sonuclar = Makale.objects.filter(Q(isim__contains = request.GET['arama']) | Q(aciklama__contains = request.GET['arama']))
 
-    paginator = Paginator(sonuclar,10)
+    paginator = Paginator(sonuclar,16)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'sonuclar.html', {'sonuclar': page_obj})

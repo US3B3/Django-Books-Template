@@ -35,30 +35,26 @@
   <div class="container">
     <div class="row vitrin">
 
+    {% for kitap in vitrin %}
       <div class="col-lg-3 col-md-6 col-sm-12 mx-2">
         <div class="vitrin-container">
           <div class="mobile-layout">
             <div class="book-cover">
-              <img class="book-top" src="{% static 'images/book-top.png' %}" alt="book-top" />
+              <img class="book-top" src="{{ kitap.kitap_resim.url }}" alt="book-top" />
               <img class="book-side" src="{% static 'images/book-side.svg' %}" alt="book-side" />
             </div>
             <div class="preface">
               <div class="content">
                 <div class="header">
                   <a href="#">
-                    <h3 class="title">O ve Ben</h3>
+                    <h3 class="title">{{ kitap.kitap_isim }}</h3>
                   </a>
                   <i class="fa fa-chevron-down align-items-right" aria-hidden="true"></i>
                 </div>
-                <div class="author">Necip Fazıl Kısakürek</div>
+                <div class="author">{{ kitap.yazar }}</div>
                 <div class="body">
                   <p>
-                    also known as The Diary of Anne Frank, is a book of the writings from the Dutch-language
-                    diary kept by Anne Frank while she was in hiding for two years with her family during the
-                    Nazi occupation of the Netherlands
-                  </p>
-                  <p>
-                    Anne calls her diary "Kitty", so almost all of the letters are written to Kitty.
+                    {{ kitap.kitap_aciklama | striptags }}
                   </p>
                 </div>
               </div>
@@ -66,169 +62,45 @@
           </div>
         </div>
       </div>
-
-      <div class="col-lg-3 col-md-6 col-sm-12 mx-2">
-        <div class="vitrin-container">
-          <div class="mobile-layout">
-            <div class="book-cover">
-              <img class="book-top" src="{% static 'images/book-top2.png' %}" alt="book-top" />
-              <img class="book-side" src="{% static 'images/book-side.svg' %}" alt="book-side" />
-            </div>
-            <div class="preface">
-              <div class="content">
-                <div class="header">
-                  <a href="#">
-                    <h3 class="title">Bir Adam Yaratmak</h3>
-                  </a>
-                  <i class="fa fa-chevron-down align-items-right" aria-hidden="true"></i>
-                </div>
-                <div class="author">Necip Fazıl Kısakürek</div>
-                <div class="body">
-                  <p>
-                    also known as The Diary of Anne Frank, is a book of the writings from the Dutch-language
-                    diary kept by Anne Frank while she was in hiding for two years with her family during the
-                    Nazi occupation of the Netherlands
-                  </p>
-                  <p>
-                    Anne calls her diary "Kitty", so almost all of the letters are written to Kitty.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 col-sm-12 mx-2">
-        <div class="vitrin-container">
-          <div class="mobile-layout">
-            <div class="book-cover">
-              <img class="book-top" src="{% static 'images/book-top3.png' %}" alt="book-top" />
-              <img class="book-side" src="{% static 'images/book-side.svg' %}" alt="book-side" />
-            </div>
-            <div class="preface">
-              <div class="content">
-                <div class="header">
-                  <a href="#">
-                    <h3 class="title">İdeolocya Örgüsü</h3>
-                  </a>
-                  <i class="fa fa-chevron-down align-items-right" aria-hidden="true"></i>
-                </div>
-                <div class="author">Necip Fazıl Kısakürek</div>
-                <div class="body">
-                  <p>
-                    also known as The Diary of Anne Frank, is a book of the writings from the Dutch-language
-                    diary kept by Anne Frank while she was in hiding for two years with her family during the
-                    Nazi occupation of the Netherlands
-                  </p>
-                  <p>
-                    Anne calls her diary "Kitty", so almost all of the letters are written to Kitty.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 col-sm-12 mx-2">
-        <div class="vitrin-container">
-          <div class="mobile-layout">
-            <div class="book-cover">
-              <img class="book-top" src="{% static 'images/book-top1.png' %}" alt="book-top" />
-              <img class="book-side" src="{% static 'images/book-side.svg' %}" alt="book-side" />
-            </div>
-            <div class="preface">
-              <div class="content">
-                <div class="header">
-                  <a href="#">
-                    <h3 class="title">Ölüm Odası</h3>
-                  </a>
-                  <i class="fa fa-chevron-down align-items-right" aria-hidden="true"></i>
-                </div>
-                <div class="author">Salih Mirzabeyoğlu</div>
-                <div class="body">
-                  <p>
-                    also known as The Diary of Anne Frank, is a book of the writings from the Dutch-language
-                    diary kept by Anne Frank while she was in hiding for two years with her family during the
-                    Nazi occupation of the Netherlands
-                  </p>
-                  <p>
-                    Anne calls her diary "Kitty", so almost all of the letters are written to Kitty.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 col-sm-12 mx-2">
-        <div class="vitrin-container">
-          <div class="mobile-layout">
-            <div class="book-cover">
-              <img class="book-top" src="{% static 'images/book-top4.png' %}" alt="book-top" />
-              <img class="book-side" src="{% static 'images/book-side.svg' %}" alt="book-side" />
-            </div>
-            <div class="preface">
-              <div class="content">
-                <div class="header">
-                  <a href="#">
-                    <h3 class="title">Sahabilerin Rolü ve Manası</h3>
-                  </a>
-                  <i class="fa fa-chevron-down align-items-right" aria-hidden="true"></i>
-                </div>
-                <div class="author">Salih Mirzabeyoğlu</div>
-                <div class="body">
-                  <p>
-                    also known as The Diary of Anne Frank, is a book of the writings from the Dutch-language
-                    diary kept by Anne Frank while she was in hiding for two years with her family during the
-                    Nazi occupation of the Netherlands
-                  </p>
-                  <p>
-                    Anne calls her diary "Kitty", so almost all of the letters are written to Kitty.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 col-sm-12 mx-2">
-        <div class="vitrin-container">
-          <div class="mobile-layout">
-            <div class="book-cover">
-              <img class="book-top" src="{% static 'images/book-top5.png' %}" alt="book-top" />
-              <img class="book-side" src="{% static 'images/book-side.svg' %}" alt="book-side" />
-            </div>
-            <div class="preface">
-              <div class="content">
-                <div class="header">
-                  <a href="#">
-                    <h3 class="title">Başyücelik Devleti</h3>
-                  </a>
-                  <i class="fa fa-chevron-down align-items-right" aria-hidden="true"></i>
-                </div>
-                <div class="author">Salih Mirzabeyoğlu</div>
-                <div class="body">
-                  <p>
-                    also known as The Diary of Anne Frank, is a book of the writings from the Dutch-language
-                    diary kept by Anne Frank while she was in hiding for two years with her family during the
-                    Nazi occupation of the Netherlands
-                  </p>
-                  <p>
-                    Anne calls her diary "Kitty", so almost all of the letters are written to Kitty.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    {% endfor %}
+      
 
     </div>
   </div>
+
+        <nav class="d-flex justify-content-center align-middle" aria-label="">
+        <ul class="pagination">
+
+        {% if page_obj.has_previous %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a>
+          </li>
+        {% endif %}
+
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.number }}"><b>{{ page_obj.number }}</b></a>
+          </li>
+        
+        {% if page_obj.has_next %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+        {% endif %}
+
+        </ul>
+      </nav>
 
   <!-- End page content -->
   </div>

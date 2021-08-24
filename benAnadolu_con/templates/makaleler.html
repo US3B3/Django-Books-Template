@@ -86,7 +86,7 @@
         {% endif %}
 
           <li class="page-item">
-            <a class="page-link" href="{{ page_obj.number }}"><b>{{ page_obj.number }}</b></a>
+            <a class="page-link" href="?page={{ page_obj.number }}"><b>{{ page_obj.number }}</b></a>
           </li>
         
         {% if page_obj.has_next %}

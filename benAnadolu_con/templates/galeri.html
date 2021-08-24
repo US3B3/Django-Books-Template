@@ -35,49 +35,54 @@
 
   <!-- about section -->
 
-  <div class="w3-overlay w3-animate-opacity align-middle" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-  <!-- !PAGE CONTENT! -->
-  <div class="w3-main w3-content container" style="max-width:1600px;margin-top:83px">
-    
-    <!-- Photo grid -->
-    <div class="w3-row w3-grayscale-min">
-      <div class="w3-quarter">
-        <img src="https://www.w3schools.com/w3images/girl.jpg" style="width:100%" onclick="onClick(this)" alt="Canoeing again">
-        <img src="https://www.w3schools.com/w3images/boy.jpg" style="width:100%" onclick="onClick(this)" alt="Quiet day at the beach. Cold, but beautiful">
-        <img src="https://www.w3schools.com/w3images/natureboy.jpg" style="width:100%" onclick="onClick(this)" alt="The Beach. Me. Alone. Beautiful">
-     </div>
-      
-     <div class="w3-quarter">
-        <img src="https://www.w3schools.com/w3images/girl_train.jpg" style="width:100%" onclick="onClick(this)" alt="A girl, and a train passing">
-        <img src="https://www.w3schools.com/w3images/man_bench.jpg" style="width:100%" onclick="onClick(this)" alt="Waiting for the bus in the desert">
-        <img src="https://www.w3schools.com/w3images/closegirl.jpg" style="width:100%" onclick="onClick(this)" alt="Nature again.. At its finest!">
-      </div>
-      
-      <div class="w3-quarter">
-        <img src="https://www.w3schools.com/w3images/man_bench.jpg" style="width:100%" onclick="onClick(this)" alt="Waiting for the bus in the desert">
-        <img src="https://www.w3schools.com/w3images/girl.jpg" style="width:100%" onclick="onClick(this)" alt="What a beautiful scenery this sunset">
-        <img src="https://www.w3schools.com/w3images/natureboy.jpg" style="width:100%" onclick="onClick(this)" alt="The Beach. Me. Alone. Beautiful">
-      </div>
-  
-      <div class="w3-quarter">
-        <img src="https://www.w3schools.com/w3images/girl.jpg" style="width:100%" onclick="onClick(this)" alt="A boy surrounded by beautiful nature">
-        <img src="https://www.w3schools.com/w3images/boy.jpg" style="width:100%" onclick="onClick(this)" alt="A girl, and a train passing">
-        <img src="https://www.w3schools.com/w3images/closegirl.jpg" style="width:100%" onclick="onClick(this)" alt="Quiet day at the beach. Cold, but beautiful">
-      </div>
-    </div>
+  <div class="container" style="margin-top:40px;">
+            <div class="demo-gallery">
+                <ul id="lightgallery" class="list-unstyled row">
+                  {% for resim in galeri %}  
+                    <li class="col-xs-12 col-sm-6 col-md-4 col-lg-4" >
+                        <a href="" data-fancybox data-src="{{ resim.resim.url }}">
+                            <img class="img-responsive" src="{{ resim.resim.url }}">
+                        </a>
+                    </li>
+                  {% endfor %}  
+                </ul>
+            </div>
+        </div>
   
     <!-- Pagination -->
-    <div class="w3-center w3-padding-32">
-      <div class="w3-bar">
-        <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-        <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-        <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-        <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-        <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-        <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
-      </div>
-    </div>
+      <nav class="d-flex justify-content-center align-middle" aria-label="">
+        <ul class="pagination">
+
+        {% if page_obj.has_previous %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a>
+          </li>
+        {% endif %}
+
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.number }}"><b>{{ page_obj.number }}</b></a>
+          </li>
+        
+        {% if page_obj.has_next %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+        {% endif %}
+
+        </ul>
+      </nav>
     
     <!-- Modal for full size images on click-->
     <div id="modal01" class="w3-modal w3-black align-middle" onclick="this.style.display='none'">

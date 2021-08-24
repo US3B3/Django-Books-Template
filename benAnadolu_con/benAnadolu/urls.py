@@ -9,4 +9,7 @@ urlpatterns = [
     path('', include('sayfalar.urls')),
     path('blog/', include('makale.urls')),
     path('videoders/', include('videoders.urls')),
+    path('galeri/', include('galeri.urls')),
+    path('vitrin/', include('vitrin.urls')),
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
