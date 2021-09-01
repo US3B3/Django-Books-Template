@@ -19,61 +19,15 @@
                 <div class="col-md-7 mx-auto">
                   <div class="detail-box">
                     <h1>
-                      Ben Anadolu Projesi<br />
-                      Nedir?
+                      BEN ANADOLU PROJESİ<br />
+                      NEDİR?
                     </h1>
                     <p>
                       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus quidem maiores perspiciatis, illo
                       maxime voluptatem a itaque suscipit.
                     </p>
                     <div class="btn-box">
-                      <a href="{% url 'sayfa' %}" class="btn1">
-                        Devamını Oku
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-7 mx-auto">
-                  <div class="detail-box">
-                    <h1>
-                      Ben Anadolu Projesi<br />
-                      Nedir?
-                    </h1>
-                    <p>
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus quidem maiores perspiciatis, illo
-                      maxime voluptatem a itaque suscipit.
-                    </p>
-                    <div class="btn-box">
-                      <a href="" class="btn1">
-                        Devamını Oku
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-7 mx-auto">
-                  <div class="detail-box">
-                    <h1>
-                      Ben Anadolu Projesi<br />
-                      Nedir?
-                    </h1>
-                    <p>
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus quidem maiores perspiciatis, illo
-                      maxime voluptatem a itaque suscipit.
-                    </p>
-                    <div class="btn-box">
-                      <a href="" class="btn1">
+                      <a href="{% url 'hakkinda' %}" class="btn1">
                         Devamını Oku
                       </a>
                     </div>
@@ -83,11 +37,11 @@
             </div>
           </div>
         </div>
+        <!--
         <ol class="carousel-indicators">
           <li data-target="#customCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#customCarousel" data-slide-to="1"></li>
-          <li data-target="#customCarousel" data-slide-to="2"></li>
         </ol>
+        -->
       </div>
     </section>
     <!-- end slider section -->
@@ -138,7 +92,7 @@
     <div class="container-fluid pr-0">
       <div class="heading_container">
         <h2>
-          Video Dersler
+          VİDEO DERSLER
         </h2>
         <p>
           It is a long established fact that a reader will be distracted by the readable content of a page when looking
@@ -190,7 +144,7 @@
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          Biyografiler
+          BİYOGRAFİLER
         </h2>
       </div>
       <div class="row">
@@ -283,28 +237,29 @@
     <div class="container">
       <div class="heading_container">
         <h2>
-          İletişim
+          İLETİŞİM
         </h2>
       </div>
       <div class="row">
         <div class="col-md-6">
           <div class="form_container">
-            <form action="">
+            <form action="" method="POST">
+            {% csrf_token %}
               <div>
-                <input type="text" placeholder="Your Name" />
+                {{ form.ad_soyad }}
               </div>
               <div>
-                <input type="text" placeholder="Phone Number" />
+                {{ form.numara }}
               </div>
               <div>
-                <input type="email" placeholder="Email" />
+                {{ form.email }}
               </div>
               <div>
-                <input type="text" class="message-box" placeholder="Message" />
+                {{ form.mesaj }}
               </div>
               <div class="btn_box">
-                <button>
-                  SEND
+                <button type="submit">
+                  GÖNDER
                 </button>
               </div>
             </form>
@@ -320,6 +275,17 @@
       </div>
     </div>
   </section>
+
+  {% if messages %}
+    {% for message in messages %}
+      <script>
+        window.onload = function(){ 
+                alert('{{ message }}');
+                }
+      </script>
+    {% endfor %}
+  {% endif %}
+
   <!-- end contact section -->
 
   {% endblock %}
