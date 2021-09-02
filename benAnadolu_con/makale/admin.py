@@ -4,7 +4,7 @@ from . models import Makale, Kategori, Etiket
 @admin.register(Makale)
 class Makale(admin.ModelAdmin):
     list_display = ('isim','erisim', 'tarih',)
-    list_filter = ('erisim','basMakale', 'taliMakale')
+    list_filter = ('erisim','basMakale', 'taliMakale', 'kategori')
     search_fields = ('isim', 'aciklama')
     prepopulated_fields={'makale_slug':('isim',)}
 

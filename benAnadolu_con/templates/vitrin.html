@@ -54,7 +54,7 @@
                 <div class="author">{{ kitap.yazar }}</div>
                 <div class="body">
                   <p>
-                    {{ kitap.kitap_aciklama | striptags }}
+                    {{ kitap.kitap_aciklama | striptags | truncatechars:215 }}
                   </p>
                 </div>
               </div>

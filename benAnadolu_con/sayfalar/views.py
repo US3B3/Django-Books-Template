@@ -1,9 +1,10 @@
 from django.views.generic.edit import FormView
+from django.views.generic.list import ListView
 from makale.models import Makale
 from django.views.generic import TemplateView
 from videoders.models import VideoDers
 from django.db.models import Q
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.core.paginator import Paginator
 from . forms import İletisimFormu
 from django.urls import reverse_lazy
@@ -30,16 +31,17 @@ class IndexView(SuccessMessageMixin, FormView):
 class HakkındaView(TemplateView):
     template_name="hakkinda.html"
 
-class BlogView(TemplateView):
-    template_name="blog.html"
-
-class BiyografiView(TemplateView):
+class BiyografiView(ListView):
     template_name="biyografi.html"
+    context_object_name = "biyografiler"
+    paginate_by = 12
+    model = Makale
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['biyografiler'] = Makale.objects.filter(kategori__isim="Biyografi").all().order_by("tarih")[:4]
         return context
+
 
 class SayfaView(TemplateView):
     template_name="sayfa.html"
