@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'makale.apps.MakaleConfig',
     'ckeditor',
     'ckeditor_uploader',
+    'colorfield',
 
 ]
 

@@ -8,7 +8,7 @@
     <section class="slider_section ">
       <div class="slider_bg_box">
         <div class="bg_img_box">
-          <img src="{% static 'images/slider-bg.jpg' %}" alt="">
+          <img src="{{ ayarlar.anasayfa_banner_resim.url }}" alt="">
         </div>
       </div>
       <div id="customCarousel" class="carousel slide" data-ride="carousel">
@@ -19,15 +19,13 @@
                 <div class="col-md-7 mx-auto">
                   <div class="detail-box">
                     <h1>
-                      BEN ANADOLU PROJESİ<br />
-                      NEDİR?
+                      {{ayarlar.anasayfa_banner_baslik}}
                     </h1>
                     <p>
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus quidem maiores perspiciatis, illo
-                      maxime voluptatem a itaque suscipit.
+                      {{ayarlar.anasayfa_banner_aciklama | truncatechars:160}}
                     </p>
                     <div class="btn-box">
-                      <a href="{% url 'hakkinda' %}" class="btn1">
+                      <a href="{% url 'sayfa' %}" class="btn1">
                         Devamını Oku
                       </a>
                     </div>
@@ -56,19 +54,18 @@
       <div class="row">
         <div class="col-md-6">
           <div class="img-box">
-            <img src="{% static 'images/about-img.jpg' %}" alt="">
+            <img src="{{ ayarlar.anasayfa_2seviye_resim.url }}" alt="">
           </div>
         </div>
         <div class="col-md-6">
           <div class="detail-box">
             <div class="heading_container">
               <h2>
-                Hakkımızda
+                {{ ayarlar.anasayfa_2seviye_baslik }}
               </h2>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti dolorem eum consequuntur ipsam repellat
-              dolor soluta aliquid laborum, eius odit consectetur vel quasi in quidem, eveniet ab est corporis tempore.
+              {{ayarlar.anasayfa_2seviye_aciklama}}
             </p>
             <a href="{% url 'hakkinda' %}">
               Devamını Oku
@@ -92,11 +89,10 @@
     <div class="container-fluid pr-0">
       <div class="heading_container">
         <h2>
-          VİDEO DERSLER
+          {{ayarlar.anasayfa_video_baslik}}
         </h2>
         <p>
-          It is a long established fact that a reader will be distracted by the readable content of a page when looking
-          at its layout. The point of using Lorem
+          {{ayarlar.anasayfa_video_aciklama}}
         </p>
       </div>
       <div class="course_container">
@@ -144,7 +140,7 @@
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          BİYOGRAFİLER
+          {{ayarlar.anasayfa_4seviye_baslik}}
         </h2>
       </div>
       <div class="row">
@@ -185,7 +181,7 @@
     <div class="container">
       <div class="heading_container">
         <h2>
-          Makaleler
+          {{ayarlar.anasayfa_5seviye_baslik}}
         </h2>
       </div>
       <div id="carouselExample2Controls" class="carousel slide" data-ride="carousel">
@@ -237,7 +233,7 @@
     <div class="container">
       <div class="heading_container">
         <h2>
-          İLETİŞİM
+          {{ayarlar.anasayfa_6seviye_baslik}}
         </h2>
       </div>
       <div class="row">

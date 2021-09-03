@@ -4,11 +4,11 @@ from makale.models import Makale
 from django.views.generic import TemplateView
 from videoders.models import VideoDers
 from django.db.models import Q
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import  render
 from django.core.paginator import Paginator
 from . forms import İletisimFormu
-from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
+from . models import Ayarlar
 
 
 class IndexView(SuccessMessageMixin, FormView):
@@ -26,6 +26,7 @@ class IndexView(SuccessMessageMixin, FormView):
         context['biyografiler'] = Makale.objects.filter(kategori__isim="Biyografi").all().order_by("tarih")[:4]
         context['makaleler'] = Makale.objects.exclude(kategori__isim="Biyografi").all().order_by("tarih")[:4]
         context['videolar'] = VideoDers.objects.all().order_by("tarih")
+        context['ayarlar'] = Ayarlar.objects.get()
         return context
 
 class HakkındaView(TemplateView):
