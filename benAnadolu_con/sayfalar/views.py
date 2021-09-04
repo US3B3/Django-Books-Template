@@ -31,6 +31,12 @@ class IndexView(SuccessMessageMixin, FormView):
 
 class HakkındaView(TemplateView):
     template_name="hakkinda.html"
+    model = Ayarlar
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['ayarlar'] = Ayarlar.objects.get()
+        return context
 
 class BiyografiView(ListView):
     template_name="biyografi.html"
@@ -41,17 +47,24 @@ class BiyografiView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['biyografiler'] = Makale.objects.filter(kategori__isim="Biyografi").all().order_by("tarih")[:4]
+        context['ayarlar'] = Ayarlar.objects.get()
         return context
 
 
 class SayfaView(TemplateView):
     template_name="sayfa.html"
+    model = Ayarlar
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['ayarlar'] = Ayarlar.objects.get()
+        return context
 
 def Arama(request):
     sonuclar = Makale.objects.filter(Q(isim__contains = request.GET['arama']) | Q(aciklama__contains = request.GET['arama']))
-
+    ayarlar = Ayarlar.objects.get()
     paginator = Paginator(sonuclar,16)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    return render(request, 'sonuclar.html', {'sonuclar': page_obj})
+    return render(request, 'sonuclar.html', {'sonuclar': page_obj,'ayarlar':ayarlar})
 

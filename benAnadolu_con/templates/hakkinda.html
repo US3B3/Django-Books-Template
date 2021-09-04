@@ -11,21 +11,17 @@
         <div class="row">
           <div class="col-md-6">
             <div class="img-box">
-              <img src="{% static 'images/about-img.jpg' %}" alt="">
+              <img src="{{ ayarlar.anasayfa_2seviye_resim.url }}" alt="">
             </div>
           </div>
           <div class="col-md-6">
             <div class="detail-box">
               <div class="heading_container">
                 <h2>
-                  Ben Anadolu Projesi Nedir?
+                  {{ ayarlar.anasayfa_2seviye_baslik }}
                 </h2>
               </div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti dolorem eum consequuntur ipsam
-                repellat dolor soluta aliquid laborum, eius odit consectetur vel quasi in quidem, eveniet ab est
-                corporis tempore.
-              </p>
+              {{ayarlar.anasayfa_2seviye_aciklama}}
             </div>
           </div>
         </div>

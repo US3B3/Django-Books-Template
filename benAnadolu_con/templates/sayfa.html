@@ -7,7 +7,7 @@
     <section class="slider_section ">
         <div class="slider_bg_box">
           <div class="bg_img_box">
-            <img src="{{ makale.resim.url }}" alt="">
+            <img src="{{ ayarlar.anasayfa_banner_resim.url }}" alt="">
           </div>
         </div>
         <div id="customCarousel" class="carousel slide" data-ride="carousel">
@@ -18,7 +18,7 @@
                   <div class="col-md-7 mx-auto">
                     <div class="detail-box">
                       <h1>
-                        {{ makale.isim | upper}}
+                        {{ ayarlar.anasayfa_banner_baslik}}
                       </h1>
                       </div>
                     </div>
@@ -37,7 +37,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-9 blog-main">
-          {{ makale.aciklama | safe }}
+          {{ ayarlar.anasayfa_banner_aciklama }}
         </div>
       </div>
     </div>

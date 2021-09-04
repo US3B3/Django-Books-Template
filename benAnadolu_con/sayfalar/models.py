@@ -33,5 +33,20 @@ class Ayarlar(models.Model):
     color = ColorField(default='#FF0000')
     ozel_renk = models.BooleanField(default=False)
 
+    footer_aciklama_baslik = models.CharField(max_length=25, unique=True, verbose_name="Footer açıklama başlık", blank=True)
+    footer_aciklama = models.TextField(max_length=150, blank=True)
+    footer_facebook = models.URLField(unique=True, null=True)
+    footer_twitter = models.URLField(unique=True, null=True)
+    footer_youtube = models.URLField(unique=True, null=True)
+    footer_instagram = models.URLField(unique=True, null=True)
+
+    footer_iletisim_baslik = models.CharField(max_length=25, unique=True, verbose_name="İletişim başlık", blank=True)
+    footer_iletisim_aciklama = models.TextField(max_length=100, blank=True)
+    footer_iletisim_konum = models.CharField(max_length=50, verbose_name="Adres",blank=True)
+    footer_iletisim_tel = models.CharField(max_length=20, verbose_name="Telefon numarası", blank=True)
+    footer_iletisim_mail = models.CharField(max_length=50, verbose_name="Mail", blank=True)
+
+    footer_mail_baslik = models.CharField(max_length=50, verbose_name="Mail başlık", blank=True)
+
     def __str__(self):
         return self.anasayfa_banner_baslik
