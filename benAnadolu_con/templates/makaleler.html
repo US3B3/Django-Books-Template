@@ -45,7 +45,7 @@
 
                   {% for makale in page_obj %}
                     <div class="col-sm-3 col-lg-3">
-                      <div class="box rounded">
+                      <div class="box rounded renk">
                         <a href="{% url 'makale_detay' makale.kategori.slug makale.makale_slug %}">
                           <div class="img-box">
                             <img src="{{makale.resim.url}}" alt="">

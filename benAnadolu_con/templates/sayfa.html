@@ -7,7 +7,13 @@
     <section class="slider_section ">
         <div class="slider_bg_box">
           <div class="bg_img_box">
-            <img src="{{ ayarlar.anasayfa_banner_resim.url }}" alt="">
+            <img src="
+              {% if makale %}
+                {{ makale.resim.url }}
+              {% else %}
+                {{ ayarlar.anasayfa_banner_resim.url }}
+              {% endif %}  
+              " alt="">
           </div>
         </div>
         <div id="customCarousel" class="carousel slide" data-ride="carousel">
@@ -18,7 +24,11 @@
                   <div class="col-md-7 mx-auto">
                     <div class="detail-box">
                       <h1>
+                      {% if makale %}
+                        {{ makale.isim }}
+                      {% else %}
                         {{ ayarlar.anasayfa_banner_baslik}}
+                      {% endif %}
                       </h1>
                       </div>
                     </div>
@@ -37,7 +47,11 @@
     <div class="container">
       <div class="row">
         <div class="col-md-9 blog-main">
-          {{ ayarlar.anasayfa_banner_aciklama }}
+         {% if makale %}
+            {{ makale.aciklama | safe }}
+          {% else %}
+            {{ ayarlar.anasayfa_banner_aciklama }}
+          {% endif %}
         </div>
       </div>
     </div>

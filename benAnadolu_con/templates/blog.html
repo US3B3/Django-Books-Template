@@ -79,12 +79,12 @@
                   {% for makale in makaleler %}
                   {% if makale.basMakale == 0 and makale.taliMakale == 0 %}
                     <div class="col-sm-6 col-lg-6">
-                      <div class="box rounded">
+                      <div class="box rounded renk">
                         <div class="img-box">
                           <img src="{{makale.resim.url}}" alt="">
                         </div>
                         <div class="detail-box">
-                          <a href="{% url 'makale_detay' makale.kategori.slug makale.makale_slug %}">
+                          <a href="{% url 'makale_detay' makale.kategori.slug makale.makale_slug %}" class="renk border">
                             <h5>
                               {{ makale.isim | upper }}
                             </h5>

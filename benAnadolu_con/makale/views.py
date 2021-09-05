@@ -10,6 +10,7 @@ def blog_list(request):
     talimakale = Makale.objects.all().filter(taliMakale = 1).order_by('-tarih')
     kategoriler = Kategori.objects.order_by('isim')[0:11].all()
     ayarlar = Ayarlar.objects.get()
+
     context = {
         'makaleler' : makaleler,
         'basmakale' : basmakale[0],
@@ -41,7 +42,7 @@ def makaleler(request):
 def kategori_list(request):
     kategoriler = Kategori.objects.order_by('isim')[0:11].all()
     ayarlar = Ayarlar.objects.get()
-    paginator = Paginator(kategoriler, 1)
+    paginator = Paginator(kategoriler, 12)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'kategoriler.html', {'kategoriler': page_obj, 'ayarlar':ayarlar})
@@ -50,14 +51,11 @@ def kategori_detay(request, kategori_isim):
     kategori_detay = Makale.objects.filter(kategori__isim=kategori_isim).all()
     kategori = kategori_isim
     ayarlar = Ayarlar.objects.get()
+    paginator = Paginator(kategori_detay, 6)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
 
-    context = {
-        'kategori_detay' : kategori_detay,
-        'kategori' : kategori,
-        'ayarlar': ayarlar,
-    }
-
-    return render(request, 'kategori.html', context)
+    return render(request, 'kategori.html', {'kategori_detay' : kategori_detay,'kategori' : kategori,'ayarlar': ayarlar, 'page_obj':page_obj})
 
 def etiket_list(request):
     kategoriler = Kategori.objects.order_by('isim')[0:11].all()

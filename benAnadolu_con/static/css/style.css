@@ -689,7 +689,7 @@ a:focus {
   margin: 3px 0;
   border-radius: 100%;
   outline: none;
-  background-color: #0e3746;
+  background-color: rgb(46, 46, 46);
   color: #ffffff;
   font-size: 20px;
 }
@@ -821,7 +821,7 @@ a:focus {
 }
 
 .client_section .box .detail-box .name h6 {
-  color: #0e3746;
+  color: #000;
   font-size: 20px;
 }
 

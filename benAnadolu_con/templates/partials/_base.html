@@ -11,11 +11,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
   <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/gif" />
+  <meta property="og:locale" content="tr_TR" />
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>Ben Anadolu</title>
+  <title>
+    {% if request.path == "/" %} 
+      BEN ANADOLU
+    {% elif request.path == "/blog/" %}
+      BEN ANADOLU BLOG
+    {% elif request.path == "/videoders/" %}
+      BEN ANADOLU VİDEOLAR
+    {% elif request.path == "/galeri/" %}
+      BEN ANADOLU GALERİ 
+    {% elif request.path == "/vitrin/" %}
+      BEN ANADOLU KİTAPLAR  
+    {% elif makale %}
+      {{ makale.isim }}
+    {% elif kategori %}
+      {{ kategori }}
+    {% elif kategoriler %}
+      {{ kategoriler.isim }}
+    {% endif %}
+  </title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
@@ -54,7 +73,7 @@
   <body class="sub_page">
 {% endif %}
 
-<button onclick="topFunction()" id="myBtn" title="Go to top"> <i class="fa fa-angle-up"></i> </button>
+<button onclick="topFunction()" id="myBtn" title="Go to top" class="renk"> <i class="fa fa-angle-up"></i> </button>
 
 <!-- Sayfa İçeriği -->
   {% block content %}
@@ -77,6 +96,20 @@
   <script src="{% static 'js/jquery.fancybox.js' %}"></script>
   <!-- custom js -->
   <script src="{% static 'js/custom.js' %}"></script>
+  <!-- Renk Seçici -->
+  {% if ayarlar.ozel_renk == True %}
+    <script>
+      var color = "{{ ayarlar.color }}";
+      const query = document.querySelectorAll('.renk');
+      const border = document.querySelectorAll('.border');
+      query.forEach(query => {
+        query.style.backgroundColor = color;
+      });
+      border.forEach(border => {
+        border.style.setProperty('border', "5px solid "+color, 'important');
+      });
+    </script>
+  {% endif %}
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
 </body>

@@ -13,6 +13,8 @@ class İletisim(models.Model):
         return self.email
 
 class Ayarlar(models.Model):
+    anasayfa_logo = models.CharField(max_length=50, unique=True, verbose_name="Logo İsim",blank=True)
+
     anasayfa_banner_baslik = models.CharField(max_length=50, unique=True, verbose_name="Anasayfa Başlık",blank=True)
     anasayfa_banner_aciklama = RichTextField(blank=True)
     anasayfa_banner_resim = models.ImageField(upload_to="makale/%Y/%m/%d/", default="varsayilan.jpg")
@@ -23,6 +25,7 @@ class Ayarlar(models.Model):
 
     anasayfa_video_baslik = models.CharField(max_length=50, unique=True, verbose_name="Anasayfa Videolar Başlık",blank=True)
     anasayfa_video_aciklama = models.TextField(max_length=150 ,blank=True)
+    anasayfa_video_resim = models.ImageField(upload_to="makale/%Y/%m/%d/", default="varsayilan.jpg")
 
     anasayfa_4seviye_baslik = models.CharField(max_length=50, unique=True, verbose_name="Anasayfa 4. Seviye Başlık",blank=True)
 
@@ -30,7 +33,7 @@ class Ayarlar(models.Model):
 
     anasayfa_6seviye_baslik = models.CharField(max_length=50, unique=True, verbose_name="Anasayfa 6. Seviye Başlık",blank=True)
 
-    color = ColorField(default='#FF0000')
+    color = ColorField(default='#0e3746')
     ozel_renk = models.BooleanField(default=False)
 
     footer_aciklama_baslik = models.CharField(max_length=25, unique=True, verbose_name="Footer açıklama başlık", blank=True)
