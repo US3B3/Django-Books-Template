@@ -51,5 +51,15 @@ class Ayarlar(models.Model):
 
     footer_mail_baslik = models.CharField(max_length=50, verbose_name="Mail başlık", blank=True)
 
+    meta_anasayfa_keywords = models.TextField(blank=True, null=True)
+    meta_anasayfa_description = models.TextField(max_length=250, blank=True)
+
+    blog_gorunurluk = models.BooleanField(blank=True, default=True)
+    blogMakale_gorunurluk = models.BooleanField(blank=True, default=True)
+    blogKategori_gorunurluk = models.BooleanField(blank=True, default=True)
+    video_gorunurluk = models.BooleanField(blank=True, default=True)
+    galeri_gorunurluk = models.BooleanField(blank=True, default=True)
+    vitrin_gorunurluk = models.BooleanField(blank=True, default=True)
+
     def __str__(self):
         return self.anasayfa_banner_baslik

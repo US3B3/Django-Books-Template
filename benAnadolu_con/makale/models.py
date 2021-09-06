@@ -25,7 +25,7 @@ class Makale(models.Model):
     kategori = models.ForeignKey(Kategori, null=True, on_delete=models.DO_NOTHING)
     aciklama = RichTextUploadingField(blank=True, null=True)
     resim = models.ImageField(upload_to="makale/%Y/%m/%d/", default="varsayilan.jpg")
-    etiketler = models.ManyToManyField(Etiket, blank=True, null=True)
+    etiketler = models.TextField(blank=True, null=True)
     tarih = models.DateTimeField(auto_now=True)
     erisim = models.BooleanField(default=True)
     basMakale = models.BooleanField(default=False)

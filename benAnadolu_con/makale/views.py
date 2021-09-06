@@ -1,6 +1,6 @@
 from django.db import models
 from django.shortcuts import render
-from . models import Kategori, Makale
+from . models import Etiket, Kategori, Makale
 from django.core.paginator import Paginator
 from sayfalar.models import Ayarlar
 
@@ -23,10 +23,9 @@ def blog_list(request):
 def makale_detay(request, kategori_slug, makale_slug):
     makale = Makale.objects.get(kategori__slug=kategori_slug, makale_slug = makale_slug)
     ayarlar = Ayarlar.objects.get()
-
     context = {
         'makale' : makale,
-        'ayarlar' : ayarlar
+        'ayarlar' : ayarlar,
     }
 
     return render(request, 'sayfa.html', context)

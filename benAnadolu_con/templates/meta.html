@@ -1,0 +1,32 @@
+{% load custom %}
+    {% if request.path == "/" %} 
+        <title>BEN ANADOLU</title>
+        <meta name="keywords" content="{{ ayarlar.meta_anasayfa_keywords }}" />
+        <meta name="description" content="{{ ayarlar.meta_anasayfa_description }}" />
+        <meta property="og:url" content="{% url 'index'%}" />
+        <meta property="og:title" content="BEN ANADOLU Projesi Anasayfa" />
+        <meta name="author" content="Ben Anadolu">
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="{{ ayarlar.anasayfa_banner_resim.url }}" />
+        <meta property="og:image:alt" content="{{ ayarlar.meta_anasayfa_description }}" />
+    {% elif makale or kategoriler %}
+        {% if makale %}
+            <title>{{ makale.isim | title }}</title>
+            <meta name="keywords" content=" {{makale.etiketler}} " />
+            <meta name="description" content="{{ makale.aciklama | truncatechars:"150" | striptags }}" />
+            <meta name="author" content="Ben Anadolu">
+            <meta property="og:type" content="article" />
+            <meta property="og:url" content="{{ request.get_full_path }}" />
+            <meta property="og:image" content="{{ makale.resim.url }}" />
+            <meta property="og:image:alt" content="{{ makale.aciklama | truncatechars:"30" | striptags }}" />
+
+        {% endif %}      
+    {% elif request.path == "/blog/" or "/videoders/" or "/galeri/" or "/vitrin/" %}
+        {% with name=request.path|slice:"1:-1" %} 
+            <title>Ben Anadolu {{name|replace:"/"| title}}</title>
+            <meta name="keywords" content=" {% degis name '/' ',' %} " />
+            <meta name="author" content="Ben Anadolu">
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content="{{ request.get_full_path }}" />
+        {%endwith%}
+    {% endif %}
