@@ -1,8 +1,12 @@
 from django.db import models
-from django.shortcuts import render
-from . models import Etiket, Kategori, Makale
+from django.shortcuts import get_object_or_404, render
+from . models import  Kategori, Makale
 from django.core.paginator import Paginator
 from sayfalar.models import Ayarlar
+
+def post(request, isim ):
+    item = get_object_or_404(Makale, isim = isim)
+    return render(request, 'blog/post.html',{'post':item})
 
 def blog_list(request):
     makaleler = Makale.objects.all().order_by('-tarih')

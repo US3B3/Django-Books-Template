@@ -2,6 +2,7 @@ from django.db import models
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.db.models.fields import SlugField
+from django.urls import reverse
 
 class Kategori(models.Model):
     isim = models.CharField(max_length = 50, null = True)
@@ -33,3 +34,7 @@ class Makale(models.Model):
 
     def __str__(self):
         return self.isim
+
+    def get_absolute_url(self):
+        return reverse("post", args=[str(self.isim)])
+    
