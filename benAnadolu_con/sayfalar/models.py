@@ -17,6 +17,10 @@ class Ayarlar(models.Model):
 
     anasayfa_banner_baslik = models.CharField(max_length=50, unique=True, verbose_name="Anasayfa Başlık",blank=True)
     anasayfa_banner_aciklama = RichTextField(blank=True)
+
+    anasayfa_banner_baslik2 = models.CharField(max_length=50, unique=True, verbose_name="Anasayfa Başlık",blank=True)
+    anasayfa_banner_aciklama2 = RichTextField(blank=True)
+
     anasayfa_banner_resim = models.ImageField(upload_to="makale/%Y/%m/%d/", default="varsayilan.jpg")
 
     anasayfa_2seviye_baslik = models.CharField(max_length=50, unique=True, verbose_name="Anasayfa 2. Seviye Başlık",blank=True)
@@ -44,7 +48,7 @@ class Ayarlar(models.Model):
     footer_instagram = models.URLField(unique=True, null=True)
 
     footer_iletisim_baslik = models.CharField(max_length=25, unique=True, verbose_name="İletişim başlık", blank=True)
-    footer_iletisim_aciklama = models.TextField(max_length=100, blank=True)
+    footer_iletisim_aciklama = RichTextField(blank=True)
     footer_iletisim_konum = models.CharField(max_length=50, verbose_name="Adres",blank=True)
     footer_iletisim_tel = models.CharField(max_length=20, verbose_name="Telefon numarası", blank=True)
     footer_iletisim_mail = models.CharField(max_length=50, verbose_name="Mail", blank=True)

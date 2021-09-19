@@ -1651,3 +1651,9 @@ font-weight: bold;
   left:auto;
 }
 
+.galeri-resim {
+  height: 500px;
+  overflow: hidden;
+  object-fit: cover;
+  min-width: 100%;
+}

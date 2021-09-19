@@ -9,7 +9,7 @@
     <section class="slider_section ">
         <div class="slider_bg_box">
           <div class="bg_img_box">
-            <img src="{% static 'images/slider-bg.jpg' %}" alt="">
+            <img src="{{ ayarlar.anasayfa_banner_resim.url }}" alt="">
           </div>
         </div>
         <div id="customCarousel" class="carousel slide" data-ride="carousel">
@@ -41,7 +41,9 @@
                   {% for resim in galeri %}  
                     <li class="col-xs-12 col-sm-6 col-md-4 col-lg-4" >
                         <a href="" data-fancybox data-src="{{ resim.resim.url }}">
+                          <div class="galeri-resim">
                             <img class="img-responsive" src="{{ resim.resim.url }}">
+                          </div>
                         </a>
                     </li>
                   {% endfor %}  
